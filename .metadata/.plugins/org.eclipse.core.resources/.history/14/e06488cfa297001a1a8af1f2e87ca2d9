@@ -1,0 +1,33 @@
+package facturas;
+
+public class Facturas implements IFacturas {
+	
+	public static void main (String [] args)  {
+		
+		int num;
+		float base;
+		float tipoIva;
+		Estados estado;//Se comenta apartado- AlumnoB pto 2
+		
+		
+	}
+
+	
+	public void cambiarEstado(Estados estado) {
+		
+		
+	}
+
+	
+	public float getTotal() {
+		
+		return 0;
+	}
+
+	
+	public float getCantidadIva() {
+		
+		return 0;
+	}
+	
+}

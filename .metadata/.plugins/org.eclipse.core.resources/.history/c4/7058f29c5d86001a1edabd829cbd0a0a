@@ -1,0 +1,54 @@
+package examen;
+
+public abstract class Jugador {
+
+	String nombre;
+	int numDor;
+	String equipo;
+	int goles;
+	int numPase;
+
+	public Jugador() {
+		
+	}
+	public Jugador(String nombre, int numDor, String equipo, int goles, int numPase) {
+		this.nombre = nombre;
+		this.numDor = numDor;
+		this.equipo = equipo;
+		this.goles = goles;
+		this.numPase = numPase;
+	}
+
+	public void setNumDor(int numDor) {
+		this.numDor = numDor;
+	}
+
+	public String getEquipo() {
+		return equipo;
+	}
+
+	public void setEquipo(String equipo) {
+		this.equipo = equipo;
+	}
+
+	public int getNumPase() {
+		return numPase;
+	}
+
+	public void setNumPase(int numPase) {
+		this.numPase = numPase;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setGoles(int goles) {
+		this.goles = goles;
+	}
+	protected abstract void añadirAtacante();
+	
+	
+	
+
+}

@@ -1,0 +1,41 @@
+package leyendo_escribiendo_bytes;
+
+import java.io.*;
+
+
+public class Lectura_Escritura_main {
+
+	public static void main(String[] args) {
+		
+		try {
+			
+			FileInputStream archivo_lectura = new FileInputStream("C:/Users/ram/Desktop/leyendo_creando/prueba.jpg");
+			
+			
+			boolean final_ar = false;
+			
+			while (!final_ar) {
+				
+				int byte_entrada = archivo_lectura.read();
+				
+				if (byte_entrada == -1) {
+					
+					final_ar = true;
+					
+					System.out.println(byte_entrada);
+				}
+				
+			}
+			
+			
+			archivo_lectura.close();
+			
+		}catch(IOException e) {
+			System.out.println("\nNo se encuentra el archivo ");
+			System.out.println("Se ha producido un error de tipo: " + e.getClass().getName());
+			
+		}
+		
+	}
+
+}

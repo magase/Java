@@ -1,0 +1,18 @@
+package ficheros_Directorios;
+
+import java.io.*;
+
+public class Pruebas_rutas {
+	
+	public void crearDirectorio() {
+		
+		File archivo = new File("ejemplo_archivo");//RUTA POR DEFECTO eL WORKSPACE DE TRABAJO Q SE USE
+		
+		System.out.println(archivo.getAbsolutePath());//IMPRIME LA RUTA ABSOLUTA AUNQ NO EXISTA 
+		
+		
+		System.out.println(archivo.exists());
+	}
+	
+
+}

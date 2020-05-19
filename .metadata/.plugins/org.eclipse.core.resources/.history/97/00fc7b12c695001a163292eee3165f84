@@ -1,0 +1,40 @@
+package ej1;
+import java.io.*;
+
+public class Metodos_Ej1 {
+
+	public void buscarDirectorio() {
+		
+
+		File ruta = new File("C:" + File.separator + "Users" + File.separator + "ram" + File.separator + "Desktop");
+		
+		File[] nombre_directorios = ruta.listFiles();
+		
+		String nombreBusca = "leyendo_creandoo";
+		boolean carpetaBusca=true;
+		
+		if(carpetaBusca==true) {
+				for (int i=0; i<nombre_directorios.length; i++) {
+				
+					
+						if (nombre_directorios[i].getName().equals(nombreBusca)) {
+							
+							carpetaBusca=false;
+							System.out.println("Carpeta exite");
+							
+						}else {
+							
+							carpetaBusca=true;
+						}
+						
+						
+					}
+				}else {
+					System.out.println("Carpeta no exite");
+				}
+		
+		
+		
+	}
+	
+}

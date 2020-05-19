@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;excepciones_1.Fallos_Java&apos; to &apos;Fallos&apos;&#x0D;&#x0A;- Original project: &apos;Excepciones&apos;&#x0D;&#x0A;- Original element: &apos;excepciones_1.Fallos_Java&apos;&#x0D;&#x0A;- Renamed element: &apos;excepciones_1.Fallos&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Fallos_Java&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;excepciones_1{Fallos_Java.java[Fallos_Java" matchStrategy="1" name="Fallos" qualified="false" references="true" similarDeclarations="false" stamp="1588269491830" textual="false" version="1.0"/>
+</session>

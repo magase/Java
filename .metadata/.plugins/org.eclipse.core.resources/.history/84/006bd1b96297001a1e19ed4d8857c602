@@ -1,0 +1,44 @@
+package ej3;
+
+import java.io.*;
+import java.util.ArrayList;
+
+public class Metodos_ej3 {
+
+	
+	public void invertirArchivo() {
+		ArrayList<Character> lista = new ArrayList<Character>();
+	
+		try {
+			FileReader entrada = new FileReader("C:\\Users\\ram\\Desktop\\leyendo_creando\\texto.txt");
+			
+			int c = entrada.read();
+			
+			while(c != -1) {
+		
+				char letra=(char)c;
+				System.out.print(letra);
+				c=entrada.read();
+				/*
+				char texto = (char) letra;
+				System.out.println(texto);
+				*/
+				lista.add(letra);
+				
+				System.out.println(letra);
+				//String[] nombre_directorios = ruta.list();
+			}
+			
+			//for (int i = )
+			
+			entrada.close();
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+}

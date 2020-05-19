@@ -1,0 +1,209 @@
+package examen;
+
+import java.util.Scanner;
+
+public class MainEquipo extends LisaJugadores {
+
+	public static void main(String[] args) {
+
+		Atacante atacante1 = new Atacante("Paco", 8, "Getafe", 9, 1, 3);
+		Defensor defensor1 = new Defensor("Benito", 10, "Atletico de Madrid", 90, 8, 90);
+		Portero portero1 = new Portero("Pepe", 10, "Real Madrid", 9, 1, 9);
+
+		listaJugadores.add(atacante1);
+		listaJugadores.add(defensor1);
+		listaJugadores.add(portero1);
+
+		int opcion;
+
+		System.out.println("Que quieres hacer");
+		System.out.println("1- Añadir Atacante");//AÃ‘ADIR ATACANTE
+		System.out.println("2- Añadir Defensor");//AÃ‘ADIR DEFENSOR
+		System.out.println("3- Añadir Portero");//AÃ‘ADIR PORTERO 
+		System.out.println("4- Contar Goles");//CONTAR GOLES
+		System.out.println("5- Contar Pases");//CONTAR PASES
+		System.out.println("6- Contar Recuperaciones");//CONTAR RECUPERACIONES
+		System.out.println("7- Contar Paradas");//CONTAR PARADAS
+		System.out.println("8- Mostrar valores del Jugador");
+
+		Scanner teclado = new Scanner(System.in);
+		opcion=teclado.nextInt();
+
+		do {
+			switch(opcion) {
+
+			//CREAR Y AÃ‘ADIR ATACANTE
+			case 1:
+				/*
+				String nombreA;
+				int numDorA;
+				String equipoA;
+				int numPaseA, golesA, recuperacionesA;
+
+				System.out.println("Que nombre tiene?");
+				nombreA=teclado.nextLine();
+				teclado.nextLine();
+				System.out.println("Que dorsal lleva?");
+				numDorA = teclado.nextInt();
+
+
+				System.out.println("De que equipo es?");
+				equipoA=teclado.nextLine();
+				teclado.nextLine();
+				
+				System.out.println("Cuantos pases lleva?");
+				numPaseA = teclado.nextInt();
+
+				System.out.println("Cuantos goles leva?");
+				golesA = teclado.nextInt();
+
+
+				System.out.println("Cuantas recuperaciones leva?");
+				recuperacionesA = teclado.nextInt();
+
+				Atacante atacante2 = new Atacante(nombreA, numDorA, equipoA, numPaseA, golesA, recuperacionesA);
+				System.out.println(atacante2);
+				listaJugadores.add(atacante2);
+				*/
+				Jugador atacante = new Atacante();
+				atacante.añadirAtacante();
+				
+				break;
+
+				//CREAR Y AÃ‘ADIR DEFENSOR
+			case 2:
+				String nombreD;
+				int numDorD;
+				String equipoD;
+				int numPaseD, golesD, recuperacionesD;
+
+				System.out.println("Que nombre tiene?");
+				nombreD=teclado.nextLine();
+
+				System.out.println("Que dorsal lleva?");
+				numDorD = teclado.nextInt();
+
+
+				System.out.println("De que equipo es?");
+				equipoD=teclado.nextLine();
+
+				System.out.println("Cuantos pases lleva?");
+				numPaseD = teclado.nextInt();
+
+				System.out.println("Cuantos goles leva?");
+				golesD = teclado.nextInt();
+
+
+				System.out.println("Cuantas recuperaciones leva?");
+				recuperacionesD = teclado.nextInt();
+
+				Defensor defensor2 = new Defensor(nombreD, numDorD, equipoD, numPaseD, golesD, recuperacionesD);
+				System.out.println(defensor2);
+				listaJugadores.add(defensor2);
+				break;
+
+				//CREAR Y AÃ‘ADIR PORTERO
+			case 3:
+				String nombreP;
+				int numDorP;
+				String equipoP;
+				int numPaseP, golesP, paradas;
+
+				System.out.println("Que nombre tiene?");
+				nombreP=teclado.nextLine();
+
+				System.out.println("Que dorsal lleva?");
+				numDorP = teclado.nextInt();
+
+
+				System.out.println("De que equipo es?");
+				equipoP=teclado.nextLine();
+
+				System.out.println("Cuantos pases lleva?");
+				numPaseP = teclado.nextInt();
+
+				System.out.println("Cuantos goles leva?");
+				golesP = teclado.nextInt();
+
+
+				System.out.println("Cuantas recuperaciones leva?");
+				paradas = teclado.nextInt();
+
+				Portero portero2 = new Portero(nombreP, numDorP, equipoP, numPaseP, golesP, paradas);
+				System.out.println(portero2);
+				listaJugadores.add(portero2);
+				break;
+
+
+				//VER CUANTOS GOLES HA HECHO UN JUGADOR
+			case 4:
+			/*
+				int dorsal;
+				dorsal = teclado.nextInt();
+					//for (int i=0; i<listaJugadores.size(); i++) {
+						if (dorsal == ListaJugadores.getnumDor()) {
+							System.out.println("El jugador elegido es: " + atacante1.nombre);
+						}
+						if (dorsal == defensor1.getnumDor()) {
+							System.out.println("El jugador elegido es: " + atacante1.nombre);
+						}
+						if (dorsal == portero1.getnumDor()) {
+							System.out.println("El jugador elegido es: " + atacante1.nombre);
+						}
+					
+			*/
+
+				break;
+
+				//VER CUANTOS PASES HA HECHO UN JUGADOR
+			case 5:
+				System.out.println("De que jugador quieres saber sus pases? (Numero de dorsal)");
+				
+
+				break;
+
+				//VER CUANTAS RECUPERACIONES HA HECHO UN JUGADOR
+			case 6:
+				int j;
+				System.out.println("De que jugador quieres saber sus recuperaciones? (Numero de dorsal)");
+				j = teclado.nextInt();
+				if (j== listaJugadores.get(j).getnumDor()) {
+					System.out.println(listaJugadores.get(j).getnumPase());
+				}
+
+				break;
+
+				//VER CUANTAS PARADAS HA HECHO UN PORTERO
+			case 7:/*
+				int j;
+				System.out.println("De que portero quieres saber sus paradas? (Numero de dorsal)");
+				j = teclado.nextInt();
+				if (j== listaJugadores.get(j).getnumDor()) {
+					System.out.println(listaJugadores.get(j).getnumPase());
+				}*/
+
+				break;
+
+				//VER EL VALOR DE UN JUGADOR
+			case 8:/*
+				int j;
+				System.out.println("De que jugador quieres saber sus Valor? (Numero de dorsal)");
+				j = teclado.nextInt();
+				if (j== listaJugadores.get(j).getnumDor()) {
+					System.out.println(listaJugadores.get(j).getnumPase());
+				}*/
+
+				break;
+
+
+			}
+		}
+
+		while (opcion !=8);
+
+
+		teclado.close();
+
+	}
+
+}

@@ -1,0 +1,47 @@
+package serializacion_youtube;
+
+import java.util.*;
+import java.util.GregorianCalendar;
+import java.io.*;
+
+public class Empleado implements Serializable{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private String nombre;
+	private double sueldo;
+	private Date fechaContrato;
+
+	public Empleado(String n, double s, int agno, int mes, int dia ) {
+		nombre =n;
+		sueldo =s; 
+		GregorianCalendar calendario = new GregorianCalendar(agno, mes-1, dia);
+		fechaContrato = calendario.getTime();
+	}
+	
+	public String getNombre() {
+		return nombre;
+	}
+	
+	public double getSueldo() {
+		
+		return sueldo;
+	}
+	
+	public Date getFechaContrato() {
+		
+		return fechaContrato;
+	}
+	
+	public void subirSueldo(double porcentaje) {
+		double aumento=sueldo*porcentaje/100;
+		sueldo += aumento;
+	}
+	
+	public String toString() {
+		return "Nombre " + nombre + ", sueldo " + sueldo + ", fecha de contratacion " + fechaContrato;
+	}
+}

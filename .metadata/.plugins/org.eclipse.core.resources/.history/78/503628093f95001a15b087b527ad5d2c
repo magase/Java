@@ -1,0 +1,29 @@
+package ficheros_Directorios;
+
+import java.io.*;
+
+public class Pruebas_rutas {
+	
+	public void crearDirectorio() {
+		
+		File archivo = new File("bin");//RUTA POR DEFECTO eL WORKSPACE DE TRABAJO Q SE USE
+		
+		System.out.println(archivo.getAbsolutePath());//IMPRIME LA RUTA ABSOLUTA AUNQ NO EXISTA 
+		
+		
+		System.out.println(archivo.exists());//SINO ESTA CREADO SALE false
+			
+		
+	}
+	
+	
+	public void listarCarpetas() {
+		
+		File ruta = new File("C:\\Users\\ram\\Desktop\\leyendo_creando");
+		
+		System.out.println(ruta.getAbsolutePath());
+		
+		
+	}
+
+}

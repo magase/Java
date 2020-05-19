@@ -1,0 +1,36 @@
+package ej2;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Metodos_ej2 {
+	
+	public void buscarCarpeta() {
+		File ruta = new File("C:\\Users\\ram\\Desktop");
+		
+		File[] nombre_directorios = ruta.listFiles();
+		Scanner teclado = new Scanner(System.in);
+		
+		String buscarArchivo=teclado.nextLine();
+			for (int i=0; i<nombre_directorios.length;i++) {
+				
+				if (buscarArchivo.equals(nombre_directorios[i].getName())){
+				
+					System.out.println("El archivo exite");
+				}
+			}
+			System.out.println("El archivo no exite");
+		
+		
+		
+		
+	
+	
+	
+		//System.out.println(ruta2.exists());
+		
+		teclado.close();
+	
+	}
+	
+}

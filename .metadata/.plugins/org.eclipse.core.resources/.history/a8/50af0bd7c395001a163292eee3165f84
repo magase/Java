@@ -1,0 +1,38 @@
+package ej1;
+import java.io.*;
+
+public class Metodos_Ej1 {
+
+	public void buscarDirectorio() {
+		
+
+		File ruta = new File("C:" + File.separator + "Users" + File.separator + "ram" + File.separator + "Desktop");
+		
+		File[] nombre_directorios = ruta.listFiles();
+		
+		File nombreBusca = new File("C:" + File.separator + "Users" + File.separator + "ram" + File.separator + "Desktop" + File.separator + "leyendo_creando");
+		boolean carpetaBusca=true;
+		/*
+		while(carpetaBusca==true) {
+			
+			for (int i=0; i<nombre_directorios.length;i++) {
+				
+				if (nombre_directorios[i].equals(nombreBusca)){
+					System.out.println("Carpeta Exite ");
+					
+					carpetaBusca = false;					
+					
+				}else {
+					System.out.println("Carpeta No Existe");
+				}
+				
+			}
+					
+			
+		}
+		*/
+		System.out.println(nombreBusca.exists());
+		
+	}
+	
+}

@@ -1,0 +1,45 @@
+package examen;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class LisaJugadores {
+
+	static ArrayList <Jugador> listaJugadores = new ArrayList<Jugador>();
+	
+	public void añadirAtacante () {
+		String nombreA;
+		int numDorA;
+		String equipoA;
+		int numPaseA, golesA, recuperacionesA;
+
+		Scanner teclado = new Scanner(System.in);
+		//int opcion;
+		//opcion = teclado.nextInt();
+
+		System.out.println("Que nombre tiene?");
+		nombreA = teclado.nextLine();
+		teclado.nextLine();
+		System.out.println("Que dorsal lleva?");
+		numDorA = teclado.nextInt();
+
+		System.out.println("De que equipo es?");
+		equipoA = teclado.nextLine();
+		teclado.nextLine();
+
+		System.out.println("Cuantos pases lleva?");
+		numPaseA = teclado.nextInt();
+
+		System.out.println("Cuantos goles leva?");
+		golesA = teclado.nextInt();
+
+		System.out.println("Cuantas recuperaciones leva?");
+		recuperacionesA = teclado.nextInt();
+
+		Atacante atacante = new Atacante(nombreA, numDorA, equipoA, numPaseA, golesA, recuperacionesA);
+		System.out.println(atacante);
+		listaJugadores.add(atacante);
+	}
+	
+	
+}

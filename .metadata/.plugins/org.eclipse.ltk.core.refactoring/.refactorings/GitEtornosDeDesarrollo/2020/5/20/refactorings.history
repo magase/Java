@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 5 elements to &apos;GitEtornosDeDesarrollo/facturas&apos;&#x0D;&#x0A;- Original project: &apos;GitEtornosDeDesarrollo&apos;&#x0D;&#x0A;- Destination element: &apos;GitEtornosDeDesarrollo/facturas&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Estados.class&#x0D;&#x0A;     Facturas.java&#x0D;&#x0A;     IFacturas.class&#x0D;&#x0A;     IFacturas.java&#x0D;&#x0A;     Estados.java&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="/&lt;facturas" element1="Estados.class" element2="Facturas.java" element3="IFacturas.class" element4="IFacturas.java" element5="Estados.java" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1589646194454" units="0" version="1.0"/>
+</session>

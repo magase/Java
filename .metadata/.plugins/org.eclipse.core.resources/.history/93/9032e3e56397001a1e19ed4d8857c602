@@ -1,0 +1,44 @@
+package ej3;
+
+import java.io.*;
+import java.util.ArrayList;
+
+public class Metodos_ej3 {
+
+	
+	public void invertirArchivo() {
+		ArrayList<Character> lista = new ArrayList<Character>();
+	
+		try {
+			FileReader entrada = new FileReader("C:\\Users\\ram\\Desktop\\leyendo_creando\\texto.txt");
+			
+			int c = entrada.read();
+			
+			while(c != -1) {
+				char letra = (char)c;
+				
+				System.out.print(letra);
+				
+				c=entrada.read();
+				lista.add(letra);
+			}
+			
+			for(int i= lista.size(); i > 0; i--) {
+				
+				System.out.println(lista.get(i));
+				
+			}
+			
+			//for (int i = )
+			
+			entrada.close();
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+}

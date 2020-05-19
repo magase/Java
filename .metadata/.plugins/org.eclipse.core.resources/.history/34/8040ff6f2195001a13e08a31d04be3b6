@@ -1,0 +1,80 @@
+package leyendo_escribiendo_bytes;
+
+import java.io.*;
+
+
+public class Lectura_Escritura {
+	
+	int datos_entrada[] = new int[537];
+	
+	public void datos_bytes() {
+
+		int contador =0;
+		
+		
+		
+		try {
+			
+			FileInputStream archivo_lectura = new FileInputStream("C:/Users/ram/Desktop/leyendo_creando/pulpo2.png");
+			
+			
+			boolean final_ar = false;
+			
+			while (!final_ar) {
+				
+				int byte_entrada = archivo_lectura.read();
+				
+				if (byte_entrada != 1) 
+				
+					datos_entrada[contador]= byte_entrada;
+				
+				else
+					
+					final_ar = true;
+					
+					
+			
+				System.out.println(datos_entrada[contador]);
+				
+				contador++;
+			}
+			
+			
+			archivo_lectura.close();
+			
+		}catch(IOException e) {
+			System.out.println("\nNo se encuentra el archivo ");
+			System.out.println("Se ha producido un error de tipo: " + e.getClass().getName());
+			
+		}
+		System.out.println(contador);
+	}
+	
+	static public void copia_fichero(int datos_nuevo_fichero[]) {
+		
+		
+		try {
+			
+			FileOutputStream archivo_nuevo= new FileOutputStream("C:/Users/ram/Desktop/leyendo_creando/pulpo2_Copia.png");
+			
+			
+			for(int i=0; i <datos_nuevo_fichero.length; i++) {
+				
+				archivo_nuevo.write(datos_nuevo_fichero[i]);
+			}
+		
+			
+			archivo_nuevo.close();
+			
+		}catch (IOException e) {
+			System.out.println("\nNo se encuentra el archivo ");
+			System.out.println("Se ha producido un error de tipo: " + e.getClass().getName());
+			
+		}
+		
+		
+		
+	}
+	
+	
+}

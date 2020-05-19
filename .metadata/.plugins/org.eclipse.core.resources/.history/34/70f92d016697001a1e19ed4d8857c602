@@ -1,0 +1,50 @@
+package ej3;
+
+import java.io.*;
+import java.util.ArrayList;
+
+public class Metodos_ej3 {
+
+	
+	public void invertirArchivo() {
+		String lista = " ";
+	
+		try {
+			FileReader entrada = new FileReader("C:\\Users\\ram\\Desktop\\leyendo_creando\\texto.txt");
+			
+			int c = entrada.read();
+			
+			while(c != -1) {
+				char letra = (char)c;
+				
+				System.out.print(letra);
+				
+				c=entrada.read();
+				
+				lista = lista + letra;  
+				
+			}
+			
+			String frase = new String(lista);
+			
+			//int tamaño = lista.size();
+			
+			for(int i = frase.length(); i >= 0; i--) {
+				
+				System.out.println(frase);
+				
+			}
+			
+			//for (int i = )
+			
+			entrada.close();
+			
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+	
+}

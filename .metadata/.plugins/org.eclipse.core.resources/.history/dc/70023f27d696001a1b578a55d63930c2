@@ -1,0 +1,27 @@
+package ej2;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class Metodos_ej2 {
+	
+	public void buscarCarpeta() {
+		//File ruta = new File("C:\\Users\\ram\\Desktop");
+		
+		//File[] nombre_directorios = ruta.listFiles();
+	
+		//Scanner teclado = new Scanner(System.in);
+	
+		//String buscarArchivo=teclado.nextLine();
+	
+	
+	
+		File ruta2 = new File("C:\\Users\\ram\\Desktop");
+		
+		System.out.println(ruta2.exists());
+		
+		//teclado.close();
+	
+	}
+	
+}

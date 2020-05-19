@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/IesCR.prog.figuras/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/IesCR.prog.figuras">
+      <sourceFolder url="file://$MODULE_DIR$/IesCR.prog.figuras/src" isTestSource="false" />
+    </content>
+    <orderEntry type="jdk" jdkName="13.0.1" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

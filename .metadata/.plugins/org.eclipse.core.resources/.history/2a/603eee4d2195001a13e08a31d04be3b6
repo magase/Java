@@ -1,0 +1,16 @@
+package leyendo_escribiendo_bytes;
+
+//import java.io.*;
+
+
+public class Lectura_Escritura_main {
+
+	public static void main(String[] args) {
+		
+		Lectura_Escritura verBytes = new Lectura_Escritura();
+		
+		verBytes.datos_bytes();
+		
+	}
+
+}

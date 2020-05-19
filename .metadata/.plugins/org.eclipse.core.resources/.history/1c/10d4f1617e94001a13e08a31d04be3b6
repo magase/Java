@@ -1,0 +1,29 @@
+package streams_youtbe;
+
+
+import java.io.FileReader;
+import java.io.IOException;
+
+public class LeerFcihero {
+		
+	public void lee() {
+	
+		try {
+			FileReader entrada = new FileReader("C:/Users/ram/Desktop/ejemploJava.txt");
+			
+			int c  = entrada.read();
+			
+			while (c != -1) {
+				c=entrada.read();
+				System.out.println(c);
+			}
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println("No se encuentra el archivo ");
+		}
+		
+	}
+	
+}
