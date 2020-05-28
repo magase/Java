@@ -30,6 +30,7 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\ram\Desktop\Examen3Global.zip"/>
 			<item value="C:\Users\ram\Desktop\Examen3Eval.zip"/>
 			<item value="C:\Users\ram\Desktop\Futbol.zip"/>
 			<item value="C:\Users\ram\Desktop\Jugadores.zip"/>
@@ -46,5 +47,10 @@
 	<section name="FileSystemImportWizard">
 	</section>
 	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.junit.wizards.NewTestCaseCreationWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jdt.ui.java/org.eclipse.jdt.junit"/>
+		</list>
 	</section>
 </section>
