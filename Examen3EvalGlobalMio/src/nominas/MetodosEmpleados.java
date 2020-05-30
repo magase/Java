@@ -1,7 +1,12 @@
 package nominas;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.*;
 import java.util.ArrayList;
-
+import javax.swing.*;
 public interface MetodosEmpleados {
 
 	
@@ -12,76 +17,64 @@ public interface MetodosEmpleados {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Cual es su nombre?");
-		String nombre = sc.nextLine();
 		
-		System.out.println("Cual es su apellido?");
-		String apellido = sc.nextLine();
+		String nombre = JOptionPane.showInputDialog("Cual es su nombre");
 		
-		System.out.println("Que edad tiene?");
-		int edad = sc.nextInt();
+		String apellido = JOptionPane.showInputDialog("Cual es su apellido");
 		
-		System.out.println("En que año se incorporo?");
-		int fechaIncor = sc.nextInt();
+		int edad = Integer.parseInt(JOptionPane.showInputDialog("Cual es su edad"));
 		
-		System.out.println("¿Cual es su departamento?\n1-Ventas\n2-Produccion\n3-Mantenimiento");
-		//sc.nextInt();
-		int deptno = sc.nextInt();
-		//String ventas="ventas";
-		//String produccion="produccion";
-		//String mantenimiento="mantenimiento";
+		int fechaIncor = Integer.parseInt(JOptionPane.showInputDialog("En que año se incorporo?"));
+		
+		int deptno = Integer.parseInt(JOptionPane.showInputDialog("¿Cual es su departamento?\\n1-Ventas\\n2-Produccion\\n3-Mantenimiento"));
 		
 		if (deptno==1) {
-			System.out.println("¿Cuantos productos ha vendido?");
-			// sc.nextInt();
-			int respuesta = sc.nextInt();
+			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha vendido?"));
 			double comision = respuesta * 0.2;
 			int sueldo = (int) (500+comision);
 			
 			Empleados empleadoV = new Venta(nombre, apellido, edad, sueldo, fechaIncor, comision );
 			listaEmpleados.add(empleadoV);
-			empleadoV.toString();
 			
 		}
 		if (deptno==2) {
-			System.out.println("¿Manipula producctos de riesgo?");
-			String respuesta = sc.nextLine();
-			respuesta.toLowerCase();
+			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("¿Manipula producctos de riesgo? \n1-Si \n2-no"));
 			boolean riesgo=false;
-			if (respuesta == "si") {
+			if (respuesta == 1) {
 				riesgo = true;
-			}
-			if (respuesta == "no") {
-				riesgo = false;
-			}else {
-				System.out.println("Cuantos producctos ha producido?");
-				int producctos = sc.nextInt();
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha producido?"));
 				double comision = producctos * 25;
 				int sueldo = (int) (500+comision);
 				Empleados empleadoP = new Produccion(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
 				listaEmpleados.add(empleadoP);
-				
+			}
+			if (respuesta == 2) {
+				riesgo = false;
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha producido?"));
+				double comision = producctos * 25;
+				int sueldo = (int) (500+comision);
+				Empleados empleadoP = new Produccion(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
+				listaEmpleados.add(empleadoP);
 			}
 		}
 		if (deptno==3) {
-			System.out.println("¿Manipula producctos de riesgo?");
-			String respuesta = sc.nextLine();
-			respuesta.toLowerCase();
+			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("¿Manipula producctos de riesgo? \n1-Si \n2-no"));
 			boolean riesgo=false;
-			if (respuesta == "si") {
+			if (respuesta == 1) {
 				riesgo = true;
-			}
-			if (respuesta == "no") {
-				riesgo = false;
-			}else {
-				System.out.println("Cuantos producctos ha producido?");
-				int producctos = sc.nextInt();
-				double comision = producctos * 25;
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha mantenido?"));
+				double comision = producctos * 10;
 				int sueldo = (int) (500+comision);
-				Empleados empleadoM = new Produccion(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
+				Empleados empleadoM = new Mantenimiento(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
 				listaEmpleados.add(empleadoM);
-				
-				
+			}
+			if (respuesta == 2) {
+				riesgo = false;
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha mantenido?"));
+				double comision = producctos * 10;
+				int sueldo = (int) (500+comision);
+				Empleados empleadoM = new Mantenimiento(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
+				listaEmpleados.add(empleadoM);
 			}
 		}
 		
@@ -91,8 +84,25 @@ public interface MetodosEmpleados {
 	
 	public static void mostrarEmpleados() {
 		
-		for (Empleados e: listaEmpleados) {
-			e.toString();
+		
+		for (int i=0; i<listaEmpleados.size();i++ ) {
+			JOptionPane.showMessageDialog( null, listaEmpleados.get(i));
+			
+		}
+		
+	}
+	
+	public static void guardarEmpleados() {
+		try {
+			ObjectOutputStream guardarEmpleados = new ObjectOutputStream(new FileOutputStream("C:/Users/ram/Desktop/empleados.txt"));
+			
+			guardarEmpleados.writeObject(listaEmpleados);
+			
+			guardarEmpleados.close();
+			
+		} catch (IOException e) {
+			System.out.println("No se puede gerenrar el archivo");
+			e.printStackTrace();
 		}
 	}
 	

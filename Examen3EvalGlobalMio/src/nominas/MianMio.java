@@ -2,6 +2,8 @@ package nominas;
 
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class MianMio implements MetodosEmpleados {
 	
 	public static void main (String[] args) {
@@ -12,10 +14,13 @@ public class MianMio implements MetodosEmpleados {
 		
 		try {
 			do {
-				System.out.println("Que quieres hacer");
-				System.out.println("1- Crear empleado");
-				System.out.println("2- Mostrar empleados");
-				opcion=teclado.nextInt();
+				
+				opcion = Integer.parseInt(JOptionPane.showInputDialog(
+						"Que quieres hacer"
+						+ "\n1- Crear empleado"
+						+ "\n2- Mostrar empleados"
+						+ "\n3- Guardar empleados"
+						));
 				switch(opcion) {
 				case 1:
 					MetodosEmpleados.crearEmpleado();
@@ -23,10 +28,13 @@ public class MianMio implements MetodosEmpleados {
 				case 2:
 					MetodosEmpleados.mostrarEmpleados();
 					break;
+				case 3:
+					MetodosEmpleados.guardarEmpleados();
+					break;
 				
 				}
 				
-			}while(opcion !=2);
+			}while(opcion !=4);
 			
 		}catch(Exception e ) {
 			e.printStackTrace();

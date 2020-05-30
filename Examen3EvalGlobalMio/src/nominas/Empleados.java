@@ -1,7 +1,13 @@
 package nominas;
 
-public abstract class Empleados implements MetodosEmpleados{
+import java.io.Serializable;
+
+public abstract class Empleados implements MetodosEmpleados, Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String nombre, apellidos;
 	int edad, sueldo;
 	int fechaIncor;
