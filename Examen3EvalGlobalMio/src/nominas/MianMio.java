@@ -14,7 +14,7 @@ public class MianMio implements MetodosEmpleados {
 		
 		try {
 			do {
-				
+				MetodosEmpleados.cargarDatos();
 				opcion = Integer.parseInt(JOptionPane.showInputDialog(
 						"Que quieres hacer"
 						+ "\n1- Crear empleado"
@@ -23,6 +23,7 @@ public class MianMio implements MetodosEmpleados {
 						+ "\n4- Mostrar empleados Guardados"
 						+ "\n5- Buscar empleado"
 						+ "\n6- Mostrar los empleados del .dat"
+						+ "\n7- Guardar los empleados del .dat"
 						));
 				switch(opcion) {
 				case 1:
@@ -43,6 +44,9 @@ public class MianMio implements MetodosEmpleados {
 					break;
 				case 6:
 					MetodosEmpleados.mostrarEmpleadoDat();
+					break;
+				case 7:
+					MetodosEmpleados.archivosSerializados();
 					break;
 				
 				}

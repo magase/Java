@@ -12,8 +12,9 @@ public abstract class Empleados implements MetodosEmpleados, Serializable {
 	int edad, sueldo;
 	int fechaIncor;
 	double comision;
+	Departamento deptno;
 	
-	public Empleados(String nombre, String apellido1, String apellido2, int edad, int sueldo, int fechaIncor, double comision) {
+	public Empleados(String nombre, String apellido1, String apellido2, int edad, int sueldo, int fechaIncor, double comision, Departamento deptno) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -21,6 +22,7 @@ public abstract class Empleados implements MetodosEmpleados, Serializable {
 		this.sueldo = sueldo;
 		this.fechaIncor = fechaIncor;
 		this.comision = comision;
+		this.deptno = deptno;
 	}
 
 	public String getNombre() {
@@ -50,6 +52,10 @@ public abstract class Empleados implements MetodosEmpleados, Serializable {
 	public double getComision() {
 		return comision;
 	}
+	
+	public Departamento getDeptno() {
+		return deptno;
+	}
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -63,8 +69,6 @@ public abstract class Empleados implements MetodosEmpleados, Serializable {
 		this.apellido2 = apellido2;
 	}
 	
-	
-
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
@@ -80,10 +84,14 @@ public abstract class Empleados implements MetodosEmpleados, Serializable {
 	public void setComision(double comision) {
 		this.comision = comision;
 	}
+	
+	public void setDeptno(Departamento deptno) {
+		this.deptno = deptno;
+	}
 
 	@Override
 	public String toString() {
-		return "Empleados nombre= " + nombre + ", primer apellido= " + apellido1 + ", segundo apellido= " + apellido2 + ", edad= " + edad + ", sueldo= " + sueldo
+		return "Departamento= "+ deptno + ", nombre= " + nombre + ", primer apellido= " + apellido1 + ", segundo apellido= " + apellido2 + ", edad= " + edad + ", sueldo= " + sueldo
 				+ ", fechaIncor= " + fechaIncor + ", comision= " + comision;
 	}
 	
