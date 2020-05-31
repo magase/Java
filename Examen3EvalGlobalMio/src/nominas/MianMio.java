@@ -20,6 +20,9 @@ public class MianMio implements MetodosEmpleados {
 						+ "\n1- Crear empleado"
 						+ "\n2- Mostrar empleados"
 						+ "\n3- Guardar empleados"
+						+ "\n4- Mostrar empleados Guardados"
+						+ "\n5- Buscar empleado"
+						+ "\n6- Mostrar los empleados del .dat"
 						));
 				switch(opcion) {
 				case 1:
@@ -31,10 +34,20 @@ public class MianMio implements MetodosEmpleados {
 				case 3:
 					MetodosEmpleados.guardarEmpleados();
 					break;
+				case 4:
+					MetodosEmpleados.mostrarEmpleadosGuardados();
+					break;
+				case 5:
+					String name = JOptionPane.showInputDialog("Que nombre tiene?");
+					MetodosEmpleados.bucarEmpleado(name);
+					break;
+				case 6:
+					MetodosEmpleados.mostrarEmpleadoDat();
+					break;
 				
 				}
 				
-			}while(opcion !=4);
+			}while(opcion !=8);
 			
 		}catch(Exception e ) {
 			e.printStackTrace();

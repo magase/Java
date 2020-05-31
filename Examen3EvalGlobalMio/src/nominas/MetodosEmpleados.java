@@ -1,12 +1,8 @@
 package nominas;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.*;
-import java.util.ArrayList;
 import javax.swing.*;
+
 public interface MetodosEmpleados {
 
 	
@@ -20,7 +16,9 @@ public interface MetodosEmpleados {
 		
 		String nombre = JOptionPane.showInputDialog("Cual es su nombre");
 		
-		String apellido = JOptionPane.showInputDialog("Cual es su apellido");
+		String apellido1 = JOptionPane.showInputDialog("Cual es su primer apellido");
+		
+		String apellido2 = JOptionPane.showInputDialog("Cual es su segundo apellido");
 		
 		int edad = Integer.parseInt(JOptionPane.showInputDialog("Cual es su edad"));
 		
@@ -33,7 +31,7 @@ public interface MetodosEmpleados {
 			double comision = respuesta * 0.2;
 			int sueldo = (int) (500+comision);
 			
-			Empleados empleadoV = new Venta(nombre, apellido, edad, sueldo, fechaIncor, comision );
+			Empleados empleadoV = new Venta(nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision );
 			listaEmpleados.add(empleadoV);
 			
 		}
@@ -45,7 +43,7 @@ public interface MetodosEmpleados {
 				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha producido?"));
 				double comision = producctos * 25;
 				int sueldo = (int) (500+comision);
-				Empleados empleadoP = new Produccion(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
+				Empleados empleadoP = new Produccion(nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo );
 				listaEmpleados.add(empleadoP);
 			}
 			if (respuesta == 2) {
@@ -53,7 +51,7 @@ public interface MetodosEmpleados {
 				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha producido?"));
 				double comision = producctos * 25;
 				int sueldo = (int) (500+comision);
-				Empleados empleadoP = new Produccion(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
+				Empleados empleadoP = new Produccion(nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo );
 				listaEmpleados.add(empleadoP);
 			}
 		}
@@ -65,7 +63,7 @@ public interface MetodosEmpleados {
 				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha mantenido?"));
 				double comision = producctos * 10;
 				int sueldo = (int) (500+comision);
-				Empleados empleadoM = new Mantenimiento(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
+				Empleados empleadoM = new Mantenimiento(nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo );
 				listaEmpleados.add(empleadoM);
 			}
 			if (respuesta == 2) {
@@ -73,7 +71,7 @@ public interface MetodosEmpleados {
 				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha mantenido?"));
 				double comision = producctos * 10;
 				int sueldo = (int) (500+comision);
-				Empleados empleadoM = new Mantenimiento(nombre, apellido, edad, sueldo, fechaIncor, comision, riesgo );
+				Empleados empleadoM = new Mantenimiento(nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo );
 				listaEmpleados.add(empleadoM);
 			}
 		}
@@ -83,26 +81,99 @@ public interface MetodosEmpleados {
 	
 	
 	public static void mostrarEmpleados() {
-		
-		
+		//Empleados no guardados
 		for (int i=0; i<listaEmpleados.size();i++ ) {
 			JOptionPane.showMessageDialog( null, listaEmpleados.get(i));
 			
+		}
+		//Empleados guardados
+		try {
+			BufferedReader bufferLecura = new BufferedReader(new FileReader("C:/Users/ram/Desktop/empleados.txt"));
+		    
+			   String lineaSalida = null;
+			   while ((lineaSalida = bufferLecura.readLine()) != null){
+		            JOptionPane.showMessageDialog(null, lineaSalida);
+				
+			}
+			
+			   bufferLecura.close();
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 		
 	}
 	
 	public static void guardarEmpleados() {
 		try {
-			ObjectOutputStream guardarEmpleados = new ObjectOutputStream(new FileOutputStream("C:/Users/ram/Desktop/empleados.txt"));
 			
-			guardarEmpleados.writeObject(listaEmpleados);
+			FileWriter escritura = new FileWriter("C:/Users/ram/Desktop/empleados.txt", true);
+			for (int i=0; i<listaEmpleados.size();i++ ) {
+				System.out.println(listaEmpleados.get(i).toString());
+				escritura.write(listaEmpleados.get(i).toString()+"\n");
+				}
 			
-			guardarEmpleados.close();
+			ObjectOutputStream guardarFichero = new ObjectOutputStream(new FileOutputStream("C:\\Users\\ram\\Desktop\\empleados.dat"));
+				for (int j=0; j<listaEmpleados.size();j++ ) {
+					guardarFichero.writeObject(listaEmpleados.get(j)
+							);
+			}
+			guardarFichero.close();
 			
-		} catch (IOException e) {
+			escritura.close();
+		} catch (Exception e) {
 			System.out.println("No se puede gerenrar el archivo");
 			e.printStackTrace();
+		}
+	}
+	
+	public static void mostrarEmpleadosGuardados() {
+		try {
+			BufferedReader bufferLecura = new BufferedReader(new FileReader("C:/Users/ram/Desktop/empleados.txt"));
+		    
+			   String lineaSalida = null;
+			   while ((lineaSalida = bufferLecura.readLine()) != null){
+		            JOptionPane.showMessageDialog(null, lineaSalida);
+				
+			}
+			
+			   bufferLecura.close();
+			
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void bucarEmpleado(String name) {
+		for (int i=0; i<listaEmpleados.size(); i++) {
+			if (name.equals(listaEmpleados.get(i).getNombre())) {
+				System.out.println(listaEmpleados.get(i).toString());
+			}
+			
+		}
+		
+		
+	}
+	
+	public static void mostrarEmpleadoDat() {
+		try {
+			
+			
+			ObjectInputStream recuperandoFichero = new ObjectInputStream(new FileInputStream("C:\\Users\\ram\\Desktop\\empleados.dat"));
+			
+			Empleados [] personalRecuperado = (Empleados[]) recuperandoFichero.readObject();
+			
+			recuperandoFichero.close();
+			
+			for(Empleados e: personalRecuperado) {
+				
+				System.out.println(e);
+			}
+			
+		}catch(Exception e) {
+			
 		}
 	}
 	
