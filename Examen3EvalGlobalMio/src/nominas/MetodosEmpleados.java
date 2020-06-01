@@ -81,15 +81,18 @@ public interface MetodosEmpleados {
 	
 	
 	public static void mostrarEmpleados() {
+		
+		
+		try {
 		//Empleados no guardados
 		for (int i=0; i<listaEmpleados.size();i++ ) {
 			JOptionPane.showMessageDialog( null, listaEmpleados.get(i));
 			
 		}
 		//Empleados guardados
-		try {
-			BufferedReader bufferLecura = new BufferedReader(new FileReader("C:/Users/ram/Desktop/empleados.txt"));
-		    
+			FileReader lectura = new FileReader("C:/Users/ram/Desktop/empleados.txt");
+			BufferedReader bufferLecura = new BufferedReader(lectura);
+		   
 			   String lineaSalida = null;
 			   while ((lineaSalida = bufferLecura.readLine()) != null){
 		            JOptionPane.showMessageDialog(null, lineaSalida);
@@ -101,6 +104,7 @@ public interface MetodosEmpleados {
 			
 		} catch(Exception e) {
 			e.printStackTrace();
+			
 		}
 		
 	}
@@ -198,15 +202,13 @@ public interface MetodosEmpleados {
 	
 	public static void cargarDatos() {
 		
-try {
-			
-			
-			ObjectInputStream recuperandoFichero = new ObjectInputStream(new FileInputStream("C:\\Users\\ram\\Desktop\\empleados.dat"));
-			
-			//Empleados [] personalRecuperado = (Empleados[]) recuperandoFichero.readObject();
+		try {
 			
 			
 			ArrayList<Empleados> personalRecuperado= new ArrayList<Empleados>();
+			FileWriter escritura = new FileWriter("C:/Users/ram/Desktop/ejemploJavaEscritura.dat", true);
+			FileInputStream ficheroDat = new FileInputStream("C:/Users/ram/Desktop/ejemploJavaEscritura.dat");
+			ObjectInputStream recuperandoFichero = new ObjectInputStream(ficheroDat);
 			
 			personalRecuperado= ((ArrayList<Empleados>) recuperandoFichero.readObject());
 			
@@ -221,6 +223,9 @@ try {
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+			JOptionPane.showMessageDialog(null,"La lista de empleados todavia no existe");
+			
+			
 		}
 	}
 	
