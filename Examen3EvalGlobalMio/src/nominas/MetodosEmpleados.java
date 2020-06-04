@@ -3,10 +3,11 @@ import java.io.*;
 import java.util.*;
 import javax.swing.*;
 
-public interface MetodosEmpleados {
+public class MetodosEmpleados {
 
 	
-	ArrayList<Empleados> listaEmpleados= new ArrayList<Empleados>();
+	static ArrayList<Empleados> listaEmpleados= new ArrayList<Empleados>();
+	
 	
 	
 	public static void crearEmpleado() {
@@ -164,9 +165,6 @@ public interface MetodosEmpleados {
 			
 			ObjectInputStream recuperandoFichero = new ObjectInputStream(new FileInputStream("C:\\Users\\ram\\Desktop\\empleados.dat"));
 			
-			//Empleados [] personalRecuperado = (Empleados[]) recuperandoFichero.readObject();
-			
-			
 			ArrayList<Empleados> personalRecuperado= new ArrayList<Empleados>();
 			
 			personalRecuperado= ((ArrayList<Empleados>) recuperandoFichero.readObject());
@@ -175,7 +173,7 @@ public interface MetodosEmpleados {
 			
 			for(Empleados e: personalRecuperado) {
 				
-				JOptionPane.showMessageDialog(null, e.toString());
+				JOptionPane.showMessageDialog(null, e);
 				System.out.println(e);
 			}
 			
@@ -202,32 +200,31 @@ public interface MetodosEmpleados {
 	
 	public static void cargarDatos() {
 		
-		try {
-			
-			
-			ArrayList<Empleados> personalRecuperado= new ArrayList<Empleados>();
-			FileWriter escritura = new FileWriter("C:/Users/ram/Desktop/ejemploJavaEscritura.dat", true);
-			FileInputStream ficheroDat = new FileInputStream("C:/Users/ram/Desktop/ejemploJavaEscritura.dat");
-			ObjectInputStream recuperandoFichero = new ObjectInputStream(ficheroDat);
-			
-			personalRecuperado= ((ArrayList<Empleados>) recuperandoFichero.readObject());
-			
-			recuperandoFichero.close();
-			
-			for(Empleados e: personalRecuperado) {
+		try {	
+			ObjectOutputStream escribiendoFichero = new ObjectOutputStream(new FileOutputStream("C:\\Users\\ram\\Desktop\\empleados.dat"));
 				
-				JOptionPane.showMessageDialog(null, e.toString());
-				System.out.println(e);
-				listaEmpleados.add(e);
+			escribiendoFichero.writeObject(listaEmpleados);
+				
+			escribiendoFichero.close();
+				
+			ObjectInputStream recuperandoFichero = new ObjectInputStream(new FileInputStream("C:\\Users\\ram\\Desktop\\empleados.dat"));
+				
+			ArrayList<Empleados> personalRecuperado= new ArrayList<Empleados>();
+			
+			personalRecuperado= (ArrayList<Empleados>) recuperandoFichero.readObject();
+				
+			recuperandoFichero.close();
+				
+			for(Empleados e: personalRecuperado) {
+					
+					//JOptionPane.showMessageDialog(null, e.toString());
+					//System.out.println(e);
+					listaEmpleados.add(e);
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
 			}
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null,"La lista de empleados todavia no existe");
-			
-			
 		}
-	}
 	
 	
 }

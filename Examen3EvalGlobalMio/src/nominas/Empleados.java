@@ -2,7 +2,7 @@ package nominas;
 
 import java.io.Serializable;
 
-public abstract class Empleados implements MetodosEmpleados, Serializable {
+public abstract class Empleados implements Serializable {
 	
 	/**
 	 * 
@@ -13,6 +13,7 @@ public abstract class Empleados implements MetodosEmpleados, Serializable {
 	int fechaIncor;
 	double comision;
 	Departamento deptno;
+	
 	
 	public Empleados(String nombre, String apellido1, String apellido2, int edad, int sueldo, int fechaIncor, double comision, Departamento deptno) {
 		this.nombre = nombre;

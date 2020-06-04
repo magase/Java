@@ -22,6 +22,9 @@ public class Mantenimiento extends Empleados{
 	public void setRiesgo(boolean riesgo) {
 		this.riesgo = riesgo;
 	}
+
+
+	
 	
 	
 

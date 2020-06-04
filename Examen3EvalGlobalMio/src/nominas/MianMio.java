@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
-public class MianMio implements MetodosEmpleados {
+public class MianMio {
 	
 	public static void main (String[] args) {
 		int opcion;
@@ -13,8 +13,9 @@ public class MianMio implements MetodosEmpleados {
 		//Empleados metodos;
 		
 		try {
+			
 			do {
-				MetodosEmpleados.cargarDatos();
+				//MetodosEmpleados.cargarDatos();
 				opcion = Integer.parseInt(JOptionPane.showInputDialog(
 						"Que quieres hacer"
 						+ "\n1- Crear empleado"
