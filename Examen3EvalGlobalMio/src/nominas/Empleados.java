@@ -2,20 +2,24 @@ package nominas;
 
 import java.io.Serializable;
 
-public abstract class Empleados implements Serializable {
+public class Empleados implements Serializable {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	Departamento departamento;
 	String nombre, apellido1, apellido2;
 	int edad, sueldo;
 	int fechaIncor;
 	double comision;
-	Departamento deptno;
+	boolean riesgo;
 	
+	public Empleados() {
+		
+	}
 	
-	public Empleados(String nombre, String apellido1, String apellido2, int edad, int sueldo, int fechaIncor, double comision, Departamento deptno) {
+	public Empleados( Departamento departamento, String nombre, String apellido1, String apellido2, int edad, int sueldo, int fechaIncor, double comision, boolean riesgo ) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -23,7 +27,8 @@ public abstract class Empleados implements Serializable {
 		this.sueldo = sueldo;
 		this.fechaIncor = fechaIncor;
 		this.comision = comision;
-		this.deptno = deptno;
+		this.riesgo = riesgo;
+		this.departamento = departamento;
 	}
 
 	public String getNombre() {
@@ -54,8 +59,13 @@ public abstract class Empleados implements Serializable {
 		return comision;
 	}
 	
-	public Departamento getDeptno() {
-		return deptno;
+	public boolean getRiesgo() {
+		return riesgo;
+		
+	}
+	
+	public Departamento getDepartamento() {
+		return departamento;
 	}
 
 	public void setNombre(String nombre) {
@@ -66,7 +76,7 @@ public abstract class Empleados implements Serializable {
 		this.apellido1 = apellido1;
 	}
 	
-	public void setApellidos(String apellido2) {
+	public void setApellido2(String apellido2) {
 		this.apellido2 = apellido2;
 	}
 	
@@ -86,14 +96,22 @@ public abstract class Empleados implements Serializable {
 		this.comision = comision;
 	}
 	
-	public void setDeptno(Departamento deptno) {
-		this.deptno = deptno;
+	public void setRiesgo(boolean riesgo) {
+		this.riesgo = riesgo;
+	}
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
+	}
+	
+	public String palabras() {
+		return "Departamento= " + departamento +"\nNombre = "+ nombre + "\nPrimer apellido= " + apellido1 + "\nSegundo apellido= " + apellido2 + "\nEdad= " + edad + "\nSueldo= " + sueldo
+				+ "\nFecha de incorporacion= " + fechaIncor + "\nComision es= " + comision + "\nRiesgo es= " + riesgo;
 	}
 
 	@Override
 	public String toString() {
-		return "Departamento= "+ deptno + ", nombre= " + nombre + ", primer apellido= " + apellido1 + ", segundo apellido= " + apellido2 + ", edad= " + edad + ", sueldo= " + sueldo
-				+ ", fechaIncor= " + fechaIncor + ", comision= " + comision;
+		return  departamento + ";" +nombre + ";" + apellido1 + ";" + apellido2 + ";" + edad + ";" + sueldo
+				+ ";" + fechaIncor + ";" + comision + ";" + riesgo;
 	}
 	
 	

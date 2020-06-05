@@ -1,3 +1,3 @@
 package nominas;
 
-public enum Departamento {VENTAS, PRODUCCION, MANTENIMIENTO}
+public enum Departamento {VENTA, PRODUCCION, MANTENIMIETNO}

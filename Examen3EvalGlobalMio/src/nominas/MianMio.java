@@ -15,7 +15,7 @@ public class MianMio {
 		try {
 			
 			do {
-				//MetodosEmpleados.cargarDatos();
+
 				opcion = Integer.parseInt(JOptionPane.showInputDialog(
 						"Que quieres hacer"
 						+ "\n1- Crear empleado"
@@ -25,10 +25,15 @@ public class MianMio {
 						+ "\n5- Buscar empleado"
 						+ "\n6- Mostrar los empleados del .dat"
 						+ "\n7- Guardar los empleados del .dat"
+						+ "\n8- Salir del programa"
+						+ "\nLos datos se guardan automaticamente"
 						));
+				MetodosEmpleados.cargarDatos();
 				switch(opcion) {
+	
 				case 1:
 					MetodosEmpleados.crearEmpleado();
+					MetodosEmpleados.guardarEmpleados();
 					break;
 				case 2:
 					MetodosEmpleados.mostrarEmpleados();
@@ -53,6 +58,7 @@ public class MianMio {
 				}
 				
 			}while(opcion !=8);
+			JOptionPane.showMessageDialog(null, "El programa ha terminado");
 			
 		}catch(Exception e ) {
 			e.printStackTrace();
