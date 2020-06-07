@@ -1,8 +1,8 @@
 package garaje;
 
 public class Coche extends Garaje{
-//ENUM TAMAÑO
+//ENUM TAMAï¿½O
 	public enum Tamanio {
-		grande, mediano, pequeño;
+		grande, mediano, pequeÃ±o;
 	}
 }

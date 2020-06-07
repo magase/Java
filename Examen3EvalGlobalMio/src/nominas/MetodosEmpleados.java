@@ -108,7 +108,7 @@ public class MetodosEmpleados {
 			
 			FileWriter escritura = new FileWriter("C:/Users/ram/Desktop/empleados.txt", true);
 			for (int i=0; i<listaEmpleados.size();i++ ) {
-				System.out.println(listaEmpleados.get(i));
+				System.out.println(listaEmpleados.get(i).palabras());
 				escritura.write(listaEmpleados.get(i) +"\n");
 				}
 			
@@ -221,6 +221,38 @@ public class MetodosEmpleados {
 				e.printStackTrace();
 			}
 		}
+	//----------------------------------------------------------------------------------------------
+	public static ArrayList leerArchivo() {
+		// crea el flujo para leer desde el archivo
+		File file = new File("C:\\archivos\\estudiantes.txt");
+		ArrayList listaEstudiantes= new ArrayList<>();	
+		Scanner scanner;
+		try {
+			//se pasa el flujo al objeto scanner
+			scanner = new Scanner(file);
+			while (scanner.hasNextLine()) {
+				// el objeto scanner lee linea a linea desde el archivo
+				String linea = scanner.nextLine();
+				Scanner delimitar = new Scanner(linea);
+				//se usa una expresión regular
+				//que valida que antes o despues de una coma (,) exista cualquier cosa
+				//parte la cadena recibida cada vez que encuentre una coma				
+				delimitar.useDelimiter("\\s*,\\s*");
+				Estudiante e= new Estudiante();
+				e.setCedula(delimitar.next());
+				e.setNombres(delimitar.next());
+				e.setApellidos(delimitar.next());
+				e.setTelefono(delimitar.next());
+				e.setDireccion(delimitar.next());
+				listaEstudiantes.add(e);
+			}
+			//se cierra el ojeto scanner
+			scanner.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return listaEstudiantes;
+	}
 	
 	
 }
