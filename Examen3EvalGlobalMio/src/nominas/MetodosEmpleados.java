@@ -25,12 +25,12 @@ public class MetodosEmpleados {
 		
 		int edad = Integer.parseInt(JOptionPane.showInputDialog("Cual es su edad"));
 		
-		int fechaIncor = Integer.parseInt(JOptionPane.showInputDialog("En que año se incorporo?"));
+		int fechaIncor = Integer.parseInt(JOptionPane.showInputDialog("En que aï¿½o se incorporo?"));
 		
-		int deptno = Integer.parseInt(JOptionPane.showInputDialog("¿Cual es su departamento?" + "\n1-Ventas" + "\n2-Produccion" + "\n3-Mantenimiento"));
+		int deptno = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Cual es su departamento?" + "\n1-Ventas" + "\n2-Produccion" + "\n3-Mantenimiento"));
 		
 		if (deptno==1) {
-			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha vendido?"));
+			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Cuantos productos ha vendido?"));
 			double comision = respuesta * 0.2;
 			int sueldo = (int) (500+comision);
 			boolean riesgo=false;
@@ -40,11 +40,11 @@ public class MetodosEmpleados {
 			
 		}
 		if (deptno==2) {
-			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("¿Manipula producctos de riesgo?"+ "\n1-Si" + "\n2-no"));
+			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Manipula producctos de riesgo?"+ "\n1-Si" + "\n2-no"));
 			boolean riesgo=false;
 			if (respuesta == 1) {
 				riesgo = true;
-				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha producido?"));
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Cuantos productos ha producido?"));
 				double comision = producctos * 25;
 				int sueldo = (int) (500+comision);
 				Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo );
@@ -52,7 +52,7 @@ public class MetodosEmpleados {
 			}
 			if (respuesta == 2) {
 				riesgo = false;
-				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha producido?"));
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Cuantos productos ha producido?"));
 				double comision = producctos * 25;
 				int sueldo = (int) (500+comision);
 				Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
@@ -60,11 +60,11 @@ public class MetodosEmpleados {
 			}
 		}
 		if (deptno==3) {
-			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("¿Manipula producctos de riesgo?" + "\n1-Si" + "\n2-no"));
+			int respuesta = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Manipula producctos de riesgo?" + "\n1-Si" + "\n2-no"));
 			boolean riesgo=false;
 			if (respuesta == 1) {
 				riesgo = true;
-				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha mantenido?"));
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Cuantos productos ha mantenido?"));
 				double comision = producctos * 10;
 				int sueldo = (int) (500+comision);
 				Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
@@ -72,7 +72,7 @@ public class MetodosEmpleados {
 			}
 			if (respuesta == 2) {
 				riesgo = false;
-				int producctos = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos productos ha mantenido?"));
+				int producctos = Integer.parseInt(JOptionPane.showInputDialog("ï¿½Cuantos productos ha mantenido?"));
 				double comision = producctos * 10;
 				int sueldo = (int) (500+comision);
 				Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
@@ -208,7 +208,7 @@ public class MetodosEmpleados {
 					
 					
 					/*
-					 * SEPARAMOS LOS ";" Y SE AÑADEN AL ARRAYLIST LOS DATOS SEPARADOS
+					 * SEPARAMOS LOS ";" Y SE Aï¿½ADEN AL ARRAYLIST LOS DATOS SEPARADOS
 					 */
 					String line = miBuffer.readLine();
 					atributos = line.split(";");
@@ -222,10 +222,11 @@ public class MetodosEmpleados {
 			}
 		}
 	//----------------------------------------------------------------------------------------------
+
 	public static ArrayList leerArchivo() {
 		// crea el flujo para leer desde el archivo
-		File file = new File("C:\\archivos\\estudiantes.txt");
-		ArrayList listaEstudiantes= new ArrayList<>();	
+		File file = new File("C:/Users/ram/Desktop/empleados.txt");
+		//ArrayList listaEstudiantes= new ArrayList<>();
 		Scanner scanner;
 		try {
 			//se pasa el flujo al objeto scanner
@@ -234,25 +235,29 @@ public class MetodosEmpleados {
 				// el objeto scanner lee linea a linea desde el archivo
 				String linea = scanner.nextLine();
 				Scanner delimitar = new Scanner(linea);
-				//se usa una expresión regular
-				//que valida que antes o despues de una coma (,) exista cualquier cosa
-				//parte la cadena recibida cada vez que encuentre una coma				
-				delimitar.useDelimiter("\\s*,\\s*");
-				Estudiante e= new Estudiante();
-				e.setCedula(delimitar.next());
-				e.setNombres(delimitar.next());
-				e.setApellidos(delimitar.next());
-				e.setTelefono(delimitar.next());
-				e.setDireccion(delimitar.next());
-				listaEstudiantes.add(e);
+				//se usa una expresion regular
+				//que valida que antes o despues de una coma (;) exista cualquier cosa
+				//parte la cadena recibida cada vez que encuentre una coma
+				delimitar.useDelimiter("\\s*;\\s*");
+				Empleados e= new Empleados();
+				e.setNombre(delimitar.next());
+				e.setApellido1(delimitar.next());
+				e.setApellido2(delimitar.next());
+				e.setEdad(Integer.parseInt(delimitar.next()));
+				e.setSueldo(Integer.parseInt(delimitar.next()));
+				e.setFechaIncor(Integer.parseInt(delimitar.next()));
+				e.setComision(Double.parseDouble(delimitar.next()));
+				e.setRiesgo(Boolean.parseBoolean(delimitar.next()));
+				e.setDepartamento(Departamento.valueOf(delimitar.next()));
+				listaEmpleados.add(e);
 			}
 			//se cierra el ojeto scanner
 			scanner.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-		return listaEstudiantes;
+		return listaEmpleados;
 	}
-	
+
 	
 }

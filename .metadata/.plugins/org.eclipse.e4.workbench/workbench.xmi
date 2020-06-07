@@ -447,7 +447,7 @@
             <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           </children>
           <children xsi:type="basic:Part" xmi:id="__jwp0KJfEeqrj-ry1W8erA" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="MetodosEmpleados.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MetodosEmpleados.java&quot; partName=&quot;MetodosEmpleados.java&quot; title=&quot;MetodosEmpleados.java&quot; tooltip=&quot;Examen3EvalGlobalMio/src/nominas/MetodosEmpleados.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Examen3EvalGlobalMio/src/nominas/MetodosEmpleados.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;8074&quot; selectionTopPixel=&quot;3287&quot;/>&#xD;&#xA;&lt;/editor>"/>
+            <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;MetodosEmpleados.java&quot; partName=&quot;MetodosEmpleados.java&quot; title=&quot;MetodosEmpleados.java&quot; tooltip=&quot;Examen3EvalGlobalMio/src/nominas/MetodosEmpleados.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/Examen3EvalGlobalMio/src/nominas/MetodosEmpleados.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;8096&quot; selectionTopPixel=&quot;3375&quot;/>&#xD;&#xA;&lt;/editor>"/>
             <tags>Editor</tags>
             <tags>removeOnHide</tags>
             <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
@@ -855,7 +855,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4jdNgpnvEeqL_6beb5df7w" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_SHFrwKfqEeqPUpY1TUhexA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_4jjUyZnvEeqL_6beb5df7w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ABTVkKivEeq1GeP3Y9Wb5w" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_4jjUyZnvEeqL_6beb5df7w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4jdNj5nvEeqL_6beb5df7w" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -886,7 +886,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4jdN4ZnvEeqL_6beb5df7w" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_SHIvEKfqEeqPUpY1TUhexA" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_4jjUPpnvEeqL_6beb5df7w"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ABXnAKivEeq1GeP3Y9Wb5w" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_4jjUPpnvEeqL_6beb5df7w"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_4jdN7JnvEeqL_6beb5df7w" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>

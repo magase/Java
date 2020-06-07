@@ -13,7 +13,7 @@ public class MianMio {
 		//Empleados metodos;
 		
 		try {
-			MetodosEmpleados.cargarDatos();
+			MetodosEmpleados.leerArchivo();
 			
 			do {
 				

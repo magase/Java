@@ -3,10 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Animales.iml" filepath="$PROJECT_DIR$/Animales.iml" />
-      <module fileurl="file://$PROJECT_DIR$/BBDD_Profesores.iml" filepath="$PROJECT_DIR$/BBDD_Profesores.iml" />
       <module fileurl="file://$PROJECT_DIR$/Calculadora.iml" filepath="$PROJECT_DIR$/Calculadora.iml" />
       <module fileurl="file://$PROJECT_DIR$/Casa.iml" filepath="$PROJECT_DIR$/Casa.iml" />
       <module fileurl="file://$PROJECT_DIR$/Centros educativos.iml" filepath="$PROJECT_DIR$/Centros educativos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Examen3EvalGlobalMio/Examen3EvalGlobalMio.iml" filepath="$PROJECT_DIR$/Examen3EvalGlobalMio/Examen3EvalGlobalMio.iml" />
       <module fileurl="file://$PROJECT_DIR$/Garaje.iml" filepath="$PROJECT_DIR$/Garaje.iml" />
       <module fileurl="file://$PROJECT_DIR$/IesCR.prog.figuras.iml" filepath="$PROJECT_DIR$/IesCR.prog.figuras.iml" />
       <module fileurl="file://$PROJECT_DIR$/IntelliJ.iml" filepath="$PROJECT_DIR$/IntelliJ.iml" />
