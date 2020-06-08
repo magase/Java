@@ -13,8 +13,9 @@ public class MianMio {
 		//Empleados metodos;
 		
 		try {
-			MetodosEmpleados.leerArchivo();
-			
+			//MetodosEmpleados.archivosSerializados();
+			//MetodosEmpleados.leerArchivo();
+			//MetodosEmpleados.cargarDatos();
 			do {
 				
 				opcion = Integer.parseInt(JOptionPane.showInputDialog(
@@ -50,10 +51,10 @@ public class MianMio {
 					MetodosEmpleados.bucarEmpleado(name);
 					break;
 				case 6:
-					MetodosEmpleados.mostrarEmpleadoDat();
+					MetodosEmpleados.desSerializarDatos();
 					break;
 				case 7:
-					MetodosEmpleados.archivosSerializados();
+					MetodosEmpleados.serializarDatos();
 					break;
 				case 9:
 					MetodosEmpleados.cargarDatos();

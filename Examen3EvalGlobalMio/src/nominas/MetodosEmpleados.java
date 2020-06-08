@@ -17,9 +17,6 @@ public class MetodosEmpleados {
 
 
 			Scanner sc = new Scanner(System.in);
-			File f = new File("C:\\Users\\ram\\Desktop\\empleados.dat");
-			FileOutputStream fos = new FileOutputStream(f);
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
 
 			String nombre = JOptionPane.showInputDialog("Cual es su nombre");
 
@@ -40,7 +37,7 @@ public class MetodosEmpleados {
 				boolean riesgo = false;
 
 				Empleados empleadoV = new Empleados(Departamento.VENTA, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
-				oos.writeObject(empleadoV);
+				//oos.writeObject(empleadoV);
 				listaEmpleados.add(empleadoV);
 
 			}
@@ -53,7 +50,7 @@ public class MetodosEmpleados {
 					double comision = producctos * 25;
 					int sueldo = (int) (500 + comision);
 					Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
-					oos.writeObject(empleadoP);
+					//oos.writeObject(empleadoP);
 					listaEmpleados.add(empleadoP);
 				}
 				if (respuesta == 2) {
@@ -62,7 +59,7 @@ public class MetodosEmpleados {
 					double comision = producctos * 25;
 					int sueldo = (int) (500 + comision);
 					Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
-					oos.writeObject(empleadoP);
+					//oos.writeObject(empleadoP);
 					listaEmpleados.add(empleadoP);
 				}
 			}
@@ -75,7 +72,7 @@ public class MetodosEmpleados {
 					double comision = producctos * 10;
 					int sueldo = (int) (500 + comision);
 					Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
-					oos.writeObject(empleadoM);
+					//oos.writeObject(empleadoM);
 					listaEmpleados.add(empleadoM);
 				}
 				if (respuesta == 2) {
@@ -84,7 +81,7 @@ public class MetodosEmpleados {
 					double comision = producctos * 10;
 					int sueldo = (int) (500 + comision);
 					Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
-					oos.writeObject(empleadoM);
+					//oos.writeObject(empleadoM);
 					listaEmpleados.add(empleadoM);
 				}
 			}
@@ -157,35 +154,31 @@ public class MetodosEmpleados {
 			if (name.equals(listaEmpleados.get(i).getNombre())) {
 				System.out.println(listaEmpleados.get(i).toString());
 			}
-			
 		}
-		
-		
 	}
 	
 	
-	public static void mostrarEmpleadoDat() {
+	public static void desSerializarDatos() {
 		try {
-			File f = new File("C:\\Users\\ram\\Desktop\\empleados.dat");
-			FileInputStream fis = new FileInputStream(f);
+			//File f = new File("C:\\Users\\ram\\Desktop\\empleados.dat");
+			FileInputStream fis = new FileInputStream("C:\\Users\\ram\\Desktop\\empleados.dat");
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			while (true){
-				Empleados e=(Empleados) ois.readObject();
-				JOptionPane.showMessageDialog(null, e.palabras());
+
+			listaEmpleados = (ArrayList) ois.readObject();
+			for (int i =0; i<listaEmpleados.size();i++) {
+				JOptionPane.showMessageDialog(null, listaEmpleados.get(i));
 			}
-			//ois.close();
+
+
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}	
 	
-	public static void archivosSerializados() {
-		
-			
+	public static void serializarDatos() {
 		try {
-			
-			File f = new File("C:\\Users\\ram\\Desktop\\empleados.dat");
-			FileOutputStream fos = new FileOutputStream(f);
+			//File f = new File("C:\\Users\\ram\\Desktop\\empleados.dat");
+			FileOutputStream fos = new FileOutputStream("C:\\Users\\ram\\Desktop\\empleados.dat");
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(listaEmpleados);
 			oos.close();
@@ -195,35 +188,20 @@ public class MetodosEmpleados {
 	}
 	
 	public static void cargarDatos() {
-		
+		try {
+			//File f = new File("C:\\Users\\ram\\Desktop\\empleados.dat");
+			FileInputStream fis = new FileInputStream("C:\\Users\\ram\\Desktop\\empleados.dat");
+			ObjectInputStream ois = new ObjectInputStream(fis);
 
-		try {	
-			
-			FileReader archivo_lectura = new FileReader("C:/Users/ram/Desktop/empleados.txt");
-			
-			BufferedReader miBuffer = new BufferedReader(archivo_lectura);
-					
-			String[] atributos;// Son 9 atributos 
-			
-			if (miBuffer.readLine() == null ) {
-			       System.out.println("No errors, and file empty");
-			
-				while(miBuffer.read() != -1) {
-					
-					
-					/*
-					 * SEPARAMOS LOS ";" Y SE A�ADEN AL ARRAYLIST LOS DATOS SEPARADOS
-					 */
-					String line = miBuffer.readLine();
-					atributos = line.split(";");
-					Departamento departamento = Departamento.valueOf(atributos[0]);
-					listaEmpleados.add(new Empleados(departamento, atributos[1], atributos[2], atributos[3], Integer.parseInt(atributos[4]), Integer.parseInt(atributos[5]), Integer.parseInt(atributos[6]), Double.parseDouble(atributos[7]), Boolean.parseBoolean(atributos[8])));
-				}
+			listaEmpleados = (ArrayList) ois.readObject();
+			for (int i =0; i<listaEmpleados.size();i++) {
+				listaEmpleados.add(listaEmpleados.get(i));
 			}
+
+
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
-			catch(Exception e) {
-				e.printStackTrace();
-			}
 		}
 	//----------------------------------------------------------------------------------------------
 
@@ -236,7 +214,7 @@ public class MetodosEmpleados {
 				Empleados e=(Empleados) ois.readObject();
 				listaEmpleados.add(e);
 			}
-			//ois.close();
+
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
