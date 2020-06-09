@@ -1,0 +1,2 @@
+PRODUCCION;manu;manu;manu;22;1050;22;550.0;true
+VENTA;san;san;san;21;504;21;4.2;false

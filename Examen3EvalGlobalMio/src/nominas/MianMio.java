@@ -13,9 +13,7 @@ public class MianMio {
 		//Empleados metodos;
 		
 		try {
-			//MetodosEmpleados.archivosSerializados();
-			//MetodosEmpleados.leerArchivo();
-			//MetodosEmpleados.cargarDatos();
+
 			do {
 				
 				opcion = Integer.parseInt(JOptionPane.showInputDialog(
@@ -26,9 +24,9 @@ public class MianMio {
 						+ "\n4- Mostrar empleados Guardados"
 						+ "\n5- Buscar empleado"
 						+ "\n6- Mostrar los empleados del .dat"
-						+ "\n7- Guardar los empleados del .dat"
+						//+ "\n7- Guardar los empleados del .dat"
 						+ "\n8- Salir del programa"
-						+ "\n9- Cargas datos del programa"
+						+ "\n9- Borra empleado"
 						//+ "\nLos datos se guardan automaticamente"
 						));
 				switch(opcion) {
@@ -42,23 +40,31 @@ public class MianMio {
 					break;
 				case 3:
 					MetodosEmpleados.guardarEmpleados();
+					MetodosEmpleados.serializarDatos();
 					break;
 				case 4:
 					MetodosEmpleados.mostrarEmpleadosGuardados();
+					//MetodosEmpleados.desSerializarDatos();
 					break;
 				case 5:
 					String name = JOptionPane.showInputDialog("Que nombre tiene?");
 					MetodosEmpleados.bucarEmpleado(name);
 					break;
+
 				case 6:
 					MetodosEmpleados.desSerializarDatos();
 					break;
+				/*
 				case 7:
 					MetodosEmpleados.serializarDatos();
 					break;
+
+				 */
 				case 9:
-					MetodosEmpleados.cargarDatos();
+					String nombre = JOptionPane.showInputDialog("Que nombre tiene?");
+					MetodosEmpleados.borrarEmpleado(nombre);
 					break;
+
 				
 				}
 				

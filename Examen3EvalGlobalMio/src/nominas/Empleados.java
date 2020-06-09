@@ -1,6 +1,7 @@
 package nominas;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 public class Empleados implements Serializable {
 	
@@ -14,12 +15,13 @@ public class Empleados implements Serializable {
 	int fechaIncor;
 	double comision;
 	boolean riesgo;
+	UUID idEmpleado;
 	
 	public Empleados() {
 		
 	}
 	
-	public Empleados( Departamento departamento, String nombre, String apellido1, String apellido2, int edad, int sueldo, int fechaIncor, double comision, boolean riesgo ) {
+	public Empleados( Departamento departamento, String nombre, String apellido1, String apellido2, int edad, int sueldo, int fechaIncor, double comision, boolean riesgo, UUID idEmpleado ) {
 		this.nombre = nombre;
 		this.apellido1 = apellido1;
 		this.apellido2 = apellido2;
@@ -29,6 +31,7 @@ public class Empleados implements Serializable {
 		this.comision = comision;
 		this.riesgo = riesgo;
 		this.departamento = departamento;
+		this.idEmpleado = idEmpleado;
 	}
 
 	public String getNombre() {
@@ -59,14 +62,13 @@ public class Empleados implements Serializable {
 		return comision;
 	}
 	
-	public boolean getRiesgo() {
-		return riesgo;
-		
-	}
+	public boolean getRiesgo() { return riesgo; }
 	
 	public Departamento getDepartamento() {
 		return departamento;
 	}
+
+	public UUID getIdEmpleado() { return  idEmpleado; }
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -99,19 +101,22 @@ public class Empleados implements Serializable {
 	public void setRiesgo(boolean riesgo) {
 		this.riesgo = riesgo;
 	}
+
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
 	}
-	
+
+	public void setIdEmpleado(UUID idEmpleado) { this.idEmpleado = idEmpleado; }
+
 	public String palabras() {
 		return "Departamento= " + departamento +"\nNombre = "+ nombre + "\nPrimer apellido= " + apellido1 + "\nSegundo apellido= " + apellido2 + "\nEdad= " + edad + "\nSueldo= " + sueldo
-				+ "\nFecha de incorporacion= " + fechaIncor + "\nComision es= " + comision + "\nRiesgo es= " + riesgo;
+				+ "\nFecha de incorporacion= " + fechaIncor + "\nComision es= " + comision + "\nRiesgo es= " + riesgo + "\nID de empleado= " + idEmpleado;
 	}
 
 	@Override
 	public String toString() {
 		return  departamento + ";" +nombre + ";" + apellido1 + ";" + apellido2 + ";" + edad + ";" + sueldo
-				+ ";" + fechaIncor + ";" + comision + ";" + riesgo;
+				+ ";" + fechaIncor + ";" + comision + ";" + riesgo + ";" + idEmpleado;
 	}
 	
 	

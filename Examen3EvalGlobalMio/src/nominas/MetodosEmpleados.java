@@ -19,24 +19,27 @@ public class MetodosEmpleados {
 			Scanner sc = new Scanner(System.in);
 
 			String nombre = JOptionPane.showInputDialog("Cual es su nombre");
+			nombre.toLowerCase();
 
 			String apellido1 = JOptionPane.showInputDialog("Cual es su primer apellido");
+			apellido1.toLowerCase();
 
 			String apellido2 = JOptionPane.showInputDialog("Cual es su segundo apellido");
+			apellido2.toLowerCase();
 
 			int edad = Integer.parseInt(JOptionPane.showInputDialog("Cual es su edad"));
 
 			int fechaIncor = Integer.parseInt(JOptionPane.showInputDialog("En que a�o se incorporo?"));
 
 			int deptno = Integer.parseInt(JOptionPane.showInputDialog("�Cual es su departamento?" + "\n1-Ventas" + "\n2-Produccion" + "\n3-Mantenimiento"));
-
+			UUID idEmpleado = UUID.randomUUID();
 			if (deptno == 1) {
 				int respuesta = Integer.parseInt(JOptionPane.showInputDialog("�Cuantos productos ha vendido?"));
 				double comision = respuesta * 0.2;
 				int sueldo = (int) (500 + comision);
 				boolean riesgo = false;
 
-				Empleados empleadoV = new Empleados(Departamento.VENTA, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
+				Empleados empleadoV = new Empleados(Departamento.VENTA, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo, idEmpleado);
 				//oos.writeObject(empleadoV);
 				listaEmpleados.add(empleadoV);
 
@@ -49,7 +52,7 @@ public class MetodosEmpleados {
 					int producctos = Integer.parseInt(JOptionPane.showInputDialog("�Cuantos productos ha producido?"));
 					double comision = producctos * 25;
 					int sueldo = (int) (500 + comision);
-					Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
+					Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo, idEmpleado);
 					//oos.writeObject(empleadoP);
 					listaEmpleados.add(empleadoP);
 				}
@@ -58,7 +61,7 @@ public class MetodosEmpleados {
 					int producctos = Integer.parseInt(JOptionPane.showInputDialog("�Cuantos productos ha producido?"));
 					double comision = producctos * 25;
 					int sueldo = (int) (500 + comision);
-					Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
+					Empleados empleadoP = new Empleados(Departamento.PRODUCCION, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo, idEmpleado);
 					//oos.writeObject(empleadoP);
 					listaEmpleados.add(empleadoP);
 				}
@@ -71,7 +74,7 @@ public class MetodosEmpleados {
 					int producctos = Integer.parseInt(JOptionPane.showInputDialog("�Cuantos productos ha mantenido?"));
 					double comision = producctos * 10;
 					int sueldo = (int) (500 + comision);
-					Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
+					Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo, idEmpleado);
 					//oos.writeObject(empleadoM);
 					listaEmpleados.add(empleadoM);
 				}
@@ -80,7 +83,7 @@ public class MetodosEmpleados {
 					int producctos = Integer.parseInt(JOptionPane.showInputDialog("�Cuantos productos ha mantenido?"));
 					double comision = producctos * 10;
 					int sueldo = (int) (500 + comision);
-					Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo);
+					Empleados empleadoM = new Empleados(Departamento.MANTENIMIETNO, nombre, apellido1, apellido2, edad, sueldo, fechaIncor, comision, riesgo, idEmpleado);
 					//oos.writeObject(empleadoM);
 					listaEmpleados.add(empleadoM);
 				}
@@ -116,7 +119,7 @@ public class MetodosEmpleados {
 	public static void guardarEmpleados() {
 		try {
 			
-			FileWriter escritura = new FileWriter("C:/Users/ram/Desktop/empleados.txt", true);
+			FileWriter escritura = new FileWriter("C:/Users/ram/Desktop/empleados.txt");
 			for (int i=0; i<listaEmpleados.size();i++ ) {
 				System.out.println(listaEmpleados.get(i).palabras());
 				escritura.write(listaEmpleados.get(i) +"\n");
@@ -150,9 +153,11 @@ public class MetodosEmpleados {
 	
 	
 	public static void bucarEmpleado(String name) {
+		name.toLowerCase();
 		for (int i=0; i<listaEmpleados.size(); i++) {
 			if (name.equals(listaEmpleados.get(i).getNombre())) {
 				System.out.println(listaEmpleados.get(i).toString());
+				JOptionPane.showMessageDialog(null, listaEmpleados.get(i).palabras());
 			}
 		}
 	}
@@ -203,20 +208,15 @@ public class MetodosEmpleados {
 			e.printStackTrace();
 		}
 		}
-	//----------------------------------------------------------------------------------------------
 
-	public static void leerArchivo() {
-		try {
-			File f = new File("C:\\Users\\ram\\Desktop\\empleados.dat");
-			FileInputStream fis = new FileInputStream(f);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			while (true){
-				Empleados e=(Empleados) ois.readObject();
-				listaEmpleados.add(e);
+	public static void borrarEmpleado(String nombre) {
+		nombre.toLowerCase();
+		for (int i=0; i<listaEmpleados.size();i++){
+			String nombreEmpleado = listaEmpleados.get(i).getNombre();
+			if (nombre.equals(nombreEmpleado)){
+				listaEmpleados.remove(i);
+				JOptionPane.showMessageDialog(null, "Empleado borrado correctamente");
 			}
-
-		}catch(Exception e) {
-			e.printStackTrace();
 		}
 
 	}
