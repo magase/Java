@@ -1,5 +1,7 @@
 package miFutbol;
 
+import java.io.Serializable;
+
 public class Delantero extends Jugador {
     int valor, jugadasGol;
 
@@ -24,5 +26,20 @@ public class Delantero extends Jugador {
 
     public void setJugadasGol(int jugadasGol) {
         this.jugadasGol = jugadasGol;
+    }
+    @Override
+    public String toString() {
+
+        return  "Delantero "+
+                "\nNombre= " + nombre +
+                "\nPrimer apellido = " + apellido1 +
+                "\nSegundo apellido= " + apellido2 +
+                "\nApodo= " + apodo +
+                "\nDorsal= " + dorsal +
+                "\nGoles= " + goles +
+                "\nPases= " + pases +
+                "\nJugadas de gol = " + jugadasGol +
+                "\nTarjetas= " + tarjetas +
+                "\nEquipo= " + equipo;
     }
 }

@@ -14,9 +14,6 @@ public class MetodosEmpleados {
 	public static void crearEmpleado() {
 		try {
 
-
-			Scanner sc = new Scanner(System.in);
-
 			String nombre = JOptionPane.showInputDialog("Cual es su nombre");
 			nombre.toLowerCase();
 
@@ -103,7 +100,6 @@ public class MetodosEmpleados {
 				}
 			}
 
-			sc.close();
 
 		}catch (Exception e){
 			e.printStackTrace();

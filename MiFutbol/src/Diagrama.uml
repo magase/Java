@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>miFutbol.ComprobarDorsal</OriginalElement>
+  <nodes>
+    <node x="506.8083333333334" y="596.0">miFutbol.Defensa</node>
+    <node x="58.808333333333394" y="617.0">miFutbol.Equipo</node>
+    <node x="248.8083333333334" y="617.0">java.lang.Enum.EnumDesc</node>
+    <node x="952.3083333333334" y="168.0">miFutbol.Jugador</node>
+    <node x="48.5" y="1400.0">miFutbol.ComprobarGoles</node>
+    <node x="1036.8083333333334" y="1.0">java.io.Serializable</node>
+    <node x="179.0" y="822.0">java.lang.FunctionalInterface</node>
+    <node x="1357.8083333333334" y="596.0">miFutbol.Delantero</node>
+    <node x="584.0" y="822.0">miFutbol.MetodosPartido</node>
+    <node x="160.0" y="0.0">java.lang.constant.Constable</node>
+    <node x="159.8083333333334" y="103.0">java.lang.Enum</node>
+    <node x="0.0" y="0.0">java.lang.Comparable</node>
+    <node x="867.0" y="822.0">miFutbol.MainPartido</node>
+    <node x="933.8083333333334" y="596.0">miFutbol.Portero</node>
+    <node x="0.0" y="923.0">java.util.Comparator</node>
+    <node x="279.5" y="1400.0">miFutbol.ComprobarDorsal</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="java.util.Comparator" target="java.lang.FunctionalInterface">
+      <point x="0.0" y="-213.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="miFutbol.Equipo" target="java.lang.Enum">
+      <point x="0.0" y="-69.5" />
+      <point x="143.8083333333334" y="571.0" />
+      <point x="209.3083333333334" y="571.0" />
+      <point x="-99.0" y="221.5" />
+    </edge>
+    <edge source="miFutbol.Jugador" target="java.io.Serializable">
+      <point x="0.0" y="-156.5" />
+      <point x="33.0" y="25.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.constant.Constable">
+      <point x="0.0" y="-221.5" />
+      <point x="308.3083333333334" y="78.0" />
+      <point x="332.0" y="78.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="miFutbol.Defensa" target="miFutbol.Jugador">
+      <point x="0.0" y="-90.5" />
+      <point x="710.3083333333334" y="571.0" />
+      <point x="1013.4750000000001" y="571.0" />
+      <point x="-122.33333333333326" y="156.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.io.Serializable">
+      <point x="99.0" y="-221.5" />
+      <point x="407.3083333333334" y="78.0" />
+      <point x="1069.8083333333334" y="78.0" />
+      <point x="-33.0" y="25.5" />
+    </edge>
+    <edge source="miFutbol.ComprobarDorsal" target="java.util.Comparator">
+      <point x="0.0" y="-26.5" />
+      <point x="385.0" y="1375.0" />
+      <point x="404.25" y="1375.0" />
+      <point x="134.75" y="213.5" />
+    </edge>
+    <edge source="java.lang.Enum" target="java.lang.Comparable">
+      <point x="-99.0" y="-221.5" />
+      <point x="209.3083333333334" y="78.0" />
+      <point x="70.0" y="78.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="java.lang.Enum.EnumDesc" target="java.lang.Enum">
+      <point x="59.5" y="-69.5" />
+      <point x="427.3083333333334" y="571.0" />
+      <point x="407.3083333333334" y="571.0" />
+      <point x="99.0" y="221.5" />
+    </edge>
+    <edge source="miFutbol.Portero" target="miFutbol.Jugador">
+      <point x="0.0" y="-90.5" />
+      <point x="0.0" y="156.5" />
+    </edge>
+    <edge source="miFutbol.Delantero" target="miFutbol.Jugador">
+      <point x="0.0" y="-90.5" />
+      <point x="1565.8083333333334" y="571.0" />
+      <point x="1258.1416666666667" y="571.0" />
+      <point x="122.33333333333326" y="156.5" />
+    </edge>
+    <edge source="miFutbol.ComprobarGoles" target="java.util.Comparator">
+      <point x="0.0" y="-26.5" />
+      <point x="154.0" y="1375.0" />
+      <point x="134.75" y="1375.0" />
+      <point x="-134.75" y="213.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8725637181409296" x="302.0" y="496.5" />
+  <SelectedNodes>
+    <node>java.lang.Comparable</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

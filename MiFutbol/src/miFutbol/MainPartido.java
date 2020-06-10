@@ -3,6 +3,10 @@ package miFutbol;
 import javax.swing.*;
 import java.util.Scanner;
 
+/**
+ * Created by Manuel Garcia
+ * 10/26/2020
+ */
 public class MainPartido {
 
             public static void main (String[] args) {
@@ -15,9 +19,9 @@ public class MainPartido {
                         opcion = Integer.parseInt(JOptionPane.showInputDialog(
                                 "Que quieres hacer"
                                         + "\n1-  Crear Jugador"
-                                        + "\n2-  Mostrar Jugadores Visitantes"
-                                        + "\n3-  Mostrar Jugadores Locales"
-                                        + "\n4-  Mostrar partido Guardado"
+                                        + "\n2-  Mostrar Jugadores Locales"
+                                        + "\n3-  Mostrar Jugadores Visitantes"
+                                        + "\n4-  Guardar partido Guardado"
                                         + "\n5-  Buscar jugador"
                                         + "\n6-  Mostrar los jugadores"
                                         + "\n7-  Cardar datos guardados"
@@ -30,41 +34,60 @@ public class MainPartido {
                                         + "\n14- Aumentar pases a un jugador"
                                         + "\n15- Aumentar paradas de portero"
                                         + "\n16- Aumentar jugadas cortadas de defensa"
-                                        + "\n17- Aumentar jugadas de gol de delantero"
+                                        + "\n17- Aumentar jugadas de goles"
                                         + "\n18- Salir del programa"
                         ));
 
                         switch(opcion) {
 
                             case 1:
-
+                                //Crear jugador
+                                /**
+                                 * @param jugador añade el jugador que elijamos al equipo
+                                 */
+                                MetodosPartido.crearJugador();
                                 break;
+
                             case 2:
-
+                                //Mostrar jugadores equipo visitante
+                                MetodosPartido.mostrarJugadoresLocales();
                                 break;
+
                             case 3:
-
+                                //Mostrar jugadores equipo local
+                                MetodosPartido.mostrarJugadoresVisitantes();
                                 break;
+
                             case 4:
+                                //Guardar datos
+                                MetodosPartido.guardarArchivo();
+                                MetodosPartido.serializarDatos();
 
                                 break;
-                            case 5:
 
+                            case 5:
+                                //mostrar datos guardados
+                                int numDorsal = Integer.parseInt(JOptionPane.showInputDialog("¿Cual es el dorsal que buscar?"));
+                                MetodosPartido.buscarJugador(numDorsal);
                                 break;
 
                             case 6:
-
+                                //Deseraializar datos
+                                MetodosPartido.desSerializarDatos();
                                 break;
 
                             case 7:
-
+                                MetodosPartido.cargarDatos();
                                 break;
+
 
                             case 8:
-
+                                int dor = Integer.parseInt(JOptionPane.showInputDialog("¿Cual es el dorsal que buscas?"));
+                                int gol = Integer.parseInt(JOptionPane.showInputDialog("¿Cuantos goles quieres añadir?"));
+                                MetodosPartido.sumarGoles(gol, dor);
                                 break;
 
-                            case 9:
+                            /*case 9:
 
                                 break;
 
@@ -79,10 +102,11 @@ public class MainPartido {
                             case 12:
 
                                 break;
-				/*
-				Caso 18 sale del programa
-				 */
 
+				Caso 18 sale del programa
+
+
+                            */
                         }
                     }while(opcion !=18);
                     JOptionPane.showMessageDialog(null, "El programa ha terminado");
@@ -98,4 +122,3 @@ public class MainPartido {
         }
 
 
-}

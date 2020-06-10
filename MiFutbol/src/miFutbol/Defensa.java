@@ -1,6 +1,8 @@
 package miFutbol;
 
-public class Defensa extends Jugador {
+import java.io.Serializable;
+
+public class Defensa extends Jugador  {
     int valor, jugadasCortadas;
 
 
@@ -24,5 +26,21 @@ public class Defensa extends Jugador {
 
     public void setJugadasCortadas(int jugadasCortadas) {
         this.jugadasCortadas = jugadasCortadas;
+    }
+
+    @Override
+    public String toString() {
+
+        return  "Defensa "+
+                "\nNombre= " + nombre +
+                "\nPrimer apellido = " + apellido1 +
+                "\nSegundo apellido= " + apellido2 +
+                "\nApodo= " + apodo +
+                "\nDorsal= " + dorsal +
+                "\nGoles= " + goles +
+                "\nPases= " + pases +
+                "\nJugadas cortadas = " + jugadasCortadas +
+                "\nTarjetas= " + tarjetas +
+                "\nEquipo= " + equipo;
     }
 }

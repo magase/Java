@@ -1,6 +1,8 @@
 package miFutbol;
 
-public class Portero extends Jugador {
+import java.io.Serializable;
+
+public class Portero extends Jugador  {
     int valor, paradas;
 
 
@@ -24,5 +26,21 @@ public class Portero extends Jugador {
 
     public void setParadas(int paradas) {
         this.paradas = paradas;
+    }
+
+    @Override
+    public String toString() {
+
+        return  "Portero"+
+                "\nNombre= " + nombre +
+                "\nPrimer apellido = " + apellido1 +
+                "\nSegundo apellido= " + apellido2 +
+                "\nApodo= " + apodo +
+                "\nDorsal= " + dorsal +
+                "\nGoles= " + goles +
+                "\nPases= " + pases +
+                "\nParadas= " + paradas +
+                "\nTarjetas= " + tarjetas +
+                "\nEquipo= " + equipo;
     }
 }

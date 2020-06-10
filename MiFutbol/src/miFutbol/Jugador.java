@@ -94,16 +94,15 @@ public abstract class Jugador implements Serializable {
 
     @Override
     public String toString() {
-        return "Jugador{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido1='" + apellido1 + '\'' +
-                ", apellido2='" + apellido2 + '\'' +
-                ", apodo='" + apodo + '\'' +
-                ", dorsal=" + dorsal +
-                ", goles=" + goles +
-                ", pases=" + pases +
-                ", tarjetas=" + tarjetas +
-                ", equipo= " + equipo +
-                '}';
+        return "Jugador" +
+                "\nNombre= " + nombre +
+                "\nPrimer apellido = " + apellido1 +
+                "\nSegundo apellido= " + apellido2 +
+                "\nApodo= " + apodo +
+                "\nDorsal= " + dorsal +
+                "\nGoles= " + goles +
+                "\nPases= " + pases +
+                "\nTarjetas= " + tarjetas +
+                "\nEquipo= " + equipo;
     }
 }
