@@ -10,6 +10,9 @@ public class MainInventario {
 
         int opcion;
         Hardware hardware = new Hardware();
+
+        Ventana myVentana = new Ventana();
+        myVentana.setVisible(true);
         do {
 
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -18,7 +21,8 @@ public class MainInventario {
                             "\n2- Agregar producto" +
                             "\n3- Actualizar producto" +
                             "\n4- Borrar producto"+
-                            "\n5- Salir"
+                            "\n5- Salir" +
+                            "\n6- Ventana"
             ));
 
 
@@ -131,6 +135,11 @@ public class MainInventario {
                     JOptionPane.showMessageDialog(null, "Adiós!! :)");
                     salir = true;
                 break;
+
+                case 6:
+
+                    System.out.println("Opcion en pruebas");
+                    break;
 
             }
         }while (!salir);
