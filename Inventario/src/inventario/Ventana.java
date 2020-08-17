@@ -22,12 +22,16 @@ public class Ventana extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "Este boton funciona");
+
             }
         });
         agregarProductosButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                GuardarArchivos.crearHardware();
+              //  GuardarArchivos.crearHardware();
+                VentanaAgregar myAgregarVentana = new VentanaAgregar();
+                myAgregarVentana.setVisible(true);
+
             }
         });
 
@@ -41,3 +45,4 @@ public class Ventana extends JFrame{
 
 
 }
+

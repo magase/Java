@@ -19,6 +19,8 @@ public class MainInventario {
         myVentana.setVisible(true);
 
 
+
+
 /*
         do{
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -44,7 +46,7 @@ public class MainInventario {
             } teclado.close();
 
         }while (!salir);
-        
+
  */
         /*
         do {
