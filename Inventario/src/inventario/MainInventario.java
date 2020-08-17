@@ -1,6 +1,7 @@
 package inventario;
 
 import javax.swing.*;
+import java.util.Scanner;
 
 public class MainInventario {
 
@@ -8,11 +9,42 @@ public class MainInventario {
     public static void main (String [] arg){
         boolean salir = false;
 
+        Scanner teclado = new Scanner(System.in);
+
         int opcion;
+        /*
         Hardware hardware = new Hardware();
 
         Ventana myVentana = new Ventana();
         myVentana.setVisible(true);
+
+         */
+
+        do{
+            opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "Esta es la base de datos de hardware de Manuel " +
+                            "\n1- Agregar" +
+                            "\n2- Mostrar lista" +
+                            "\n3- Salir"
+
+            ));
+
+            switch (opcion) {
+                case 1:
+                    GuardarArchivos.crearHardware();
+                    break;
+                case 2:
+                    GuardarArchivos.mostrarArray();
+                    break;
+                case 3:
+                    salir = true;
+                    break;
+
+
+            } teclado.close();
+
+        }while (!salir);
+        /*
         do {
 
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
@@ -143,6 +175,10 @@ public class MainInventario {
 
             }
         }while (!salir);
+
+         */
+
+
 
 
 

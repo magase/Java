@@ -5,22 +5,20 @@ import java.util.ArrayList;
 
 public class Hardware {
 
-    ArrayList<Hardware> BaseDatosHardware = new ArrayList();
-
     public enum Parte {
         RAM, PLACA_BASE, PROCESADOR, ALMACENAMIENTO, TARJETA_GRAFICA, TARJETA_SONIDO, USB, MONITOR, TECLADO, RATON, CAMARA, OTRO
     }
 
-    private int capacidad, id = BaseDatosHardware.size()+1;;
+    private int capacidad, id;
     private String marca, modelo;
-    Parte parte;
+    String parte;
 
     public Hardware(){
 
     }
 
 
-    public Hardware (int id, int capacidad, String marca, String modelo, Parte parte){
+    public Hardware (int id, int capacidad, String marca, String modelo, String parte){
 
         this.id = id;
         this.capacidad = capacidad;
@@ -30,21 +28,13 @@ public class Hardware {
 
     }
 
-    public void añadirObjeto(Hardware hardware){
-
-        BaseDatosHardware.add(hardware);
-
+    public int getId() {
+        return id;
     }
 
-
-    public void mostrarBaseDatos(){
-
-        for (int i=0; i<BaseDatosHardware.size(); i++){
-            System.out.println(BaseDatosHardware.get(i));
-        }
-
+    public void setId(int id) {
+        this.id = id;
     }
-
 
     public int getCapacidad() {
         return capacidad;
@@ -70,11 +60,11 @@ public class Hardware {
     }
 
 
-    public Parte getParte() {
+    public String getParte() {
         return parte;
     }
 
-    public void setParte(Parte parte) {
+    public void setParte(String parte) {
         this.parte = parte;
     }
 
