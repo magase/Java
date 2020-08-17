@@ -12,14 +12,14 @@ public class MainInventario {
         Scanner teclado = new Scanner(System.in);
 
         int opcion;
-        /*
+
         Hardware hardware = new Hardware();
 
         Ventana myVentana = new Ventana();
         myVentana.setVisible(true);
 
-         */
 
+/*
         do{
             opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
                     "Esta es la base de datos de hardware de Manuel " +
@@ -44,6 +44,8 @@ public class MainInventario {
             } teclado.close();
 
         }while (!salir);
+        
+ */
         /*
         do {
 

@@ -24,6 +24,19 @@ public class Ventana extends JFrame{
                 JOptionPane.showMessageDialog(null, "Este boton funciona");
             }
         });
+        agregarProductosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuardarArchivos.crearHardware();
+            }
+        });
+
+        verTodosLosProductosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GuardarArchivos.mostrarArray();
+            }
+        });
     }
 
 
