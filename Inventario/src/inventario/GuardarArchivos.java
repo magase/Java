@@ -22,14 +22,14 @@ public interface GuardarArchivos {
     //Se crean los items del array
     static void crearHardware() {
 
-        int capacidad = Integer.parseInt(JOptionPane.showInputDialog("Que Capacidad tiene?"));//teclado.nextInt();
+        String numeroSerie = JOptionPane.showInputDialog("Que Capacidad tiene?");//teclado.nextInt();
 
         String marca =JOptionPane.showInputDialog("Que Marca es?");// teclado.nextLine();
 
         String modelo = JOptionPane.showInputDialog("Que modelo es?");//teclado.nextLine();
 
         String producto = JOptionPane.showInputDialog("Que producto es?");//teclado.nextLine();
-        Hardware hardware = new Hardware(idHardware(), capacidad, marca, modelo, producto);
+        Hardware hardware = new Hardware(idHardware(), numeroSerie, marca, modelo, producto);
 
         JOptionPane.showMessageDialog(null, hardware.toString());
         BaseDatosHardware.add(hardware);

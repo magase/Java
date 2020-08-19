@@ -9,8 +9,8 @@ public class Hardware {
         RAM, PLACA_BASE, PROCESADOR, ALMACENAMIENTO, TARJETA_GRAFICA, TARJETA_SONIDO, USB, MONITOR, TECLADO, RATON, CAMARA, OTRO
     }
 
-    private int capacidad, id;
-    private String marca, modelo;
+    private int  id;
+    private String marca, modelo, numeroSerie;
     String parte;
 
     public Hardware(){
@@ -18,10 +18,10 @@ public class Hardware {
     }
 
 
-    public Hardware (int id, int capacidad, String marca, String modelo, String parte){
+    public Hardware (int id, String marca, String modelo, String parte, String numeroSerie){
 
         this.id = id;
-        this.capacidad = capacidad;
+        this.numeroSerie = numeroSerie;
         this.marca = marca;
         this.modelo = modelo;
         this.parte = parte;
@@ -36,12 +36,12 @@ public class Hardware {
         this.id = id;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public String getNumeroSerie() {
+        return numeroSerie;
     }
 
-    public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
     }
 
     public String getMarca() {
@@ -72,7 +72,7 @@ public class Hardware {
     public String toString() {
         return "Hardware" +
                 "Id= " + id +
-                "\n capacidad= "  + capacidad +
+                "\n Numero de Serie= "  + numeroSerie +
                 "\n marca= " + marca +
                 "\n modelo= " + modelo +
                 "\n parte= " + parte;
